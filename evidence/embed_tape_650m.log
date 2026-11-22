@@ -1,0 +1,33 @@
+W1122 21:46:28.253000 42522 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/534 [00:00<?, ?it/s]Loading weights: 100%|██████████| 534/534 [00:00<00:00, 12145.47it/s]
+[transformers] [1mEsmModel LOAD REPORT[0m from: facebook/esm2_t33_650M_UR50D
+Key                       | Status     | 
+--------------------------+------------+-
+lm_head.layer_norm.weight | UNEXPECTED | 
+lm_head.dense.weight      | UNEXPECTED | 
+lm_head.bias              | UNEXPECTED | 
+lm_head.dense.bias        | UNEXPECTED | 
+lm_head.layer_norm.bias   | UNEXPECTED | 
+pooler.dense.bias         | MISSING    | 
+pooler.dense.weight       | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+  8/54025
+  408/54025
+  808/54025
+  1208/54025
+  1608/54025
+  2008/54025
+  2408/54025
+  2808/54025
+  3208/54025
+  3608/54025
+  4008/54025
+  4408/54025
+  4808/54025
+  5208/54025
+  5608/54025
+  6008/54025
+  6408/54025

@@ -126,14 +126,18 @@ def main() -> None:
         X = np.ascontiguousarray(Xall[[row_of[s] for s in df["sequence"]]])
     y = df["target"].to_numpy(dtype=np.float32)
 
-    is_train = (df["set"] == "train").to_numpy()
-    is_test = (df["set"] == "test").to_numpy()
-    tr_idx = np.flatnonzero(is_train)
-    rng = np.random.default_rng(VAL_SPLIT_SEED)
-    rng.shuffle(tr_idx)
-    n_val = max(1, int(round(VAL_FRACTION * len(tr_idx))))
-    va_idx, tr_idx = tr_idx[:n_val], tr_idx[n_val:]
-    te_idx = np.flatnonzero(is_test)
+    tr_idx = np.flatnonzero((df["set"] == "train").to_numpy())
+    te_idx = np.flatnonzero((df["set"] == "test").to_numpy())
+    given_val = np.flatnonzero((df["set"] == "valid").to_numpy())
+    if len(given_val):
+        # TAPE ships its own validation split; use it rather than inventing one
+        va_idx, val_source = given_val, "given"
+    else:
+        rng = np.random.default_rng(VAL_SPLIT_SEED)
+        rng.shuffle(tr_idx)
+        n_val = max(1, int(round(VAL_FRACTION * len(tr_idx))))
+        va_idx, tr_idx = tr_idx[:n_val], tr_idx[n_val:]
+        val_source = f"carved (fraction={VAL_FRACTION}, seed={VAL_SPLIT_SEED})"
 
     mu, sd = X[tr_idx].mean(0), X[tr_idx].std(0)
     sd[sd < 1e-6] = 1.0
@@ -143,8 +147,8 @@ def main() -> None:
 
     device = "mps" if torch.backends.mps.is_available() else "cpu"
     print(
-        f"{a.csv.stem} / {a.rep}: dim={X.shape[1]} train={len(tr_idx)} val={len(va_idx)} "
-        f"test={len(te_idx)} device={device}",
+        f"{a.csv.stem} / {a.rep}: dim={X.shape[1]} train={len(tr_idx)} "
+        f"val={len(va_idx)} ({val_source}) test={len(te_idx)} device={device}",
         flush=True,
     )
 
@@ -183,6 +187,9 @@ def main() -> None:
         "per_seed_min": float(per_seed_arr.min()),
         "per_seed_max": float(per_seed_arr.max()),
         "seed_mean_pred_spearman": rho_mean_pred,
+        "n_train": int(len(tr_idx)),
+        "n_val": int(len(va_idx)),
+        "val_source": val_source,
         "hparams": {
             "hidden": a.hidden, "dropout": a.dropout, "lr": a.lr,
             "batch_size": a.batch_size, "max_epochs": a.max_epochs, "patience": a.patience,

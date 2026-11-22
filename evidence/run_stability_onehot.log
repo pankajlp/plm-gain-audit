@@ -1,0 +1,14 @@
+stability / onehot: dim=948 train=53614 val=2512 (given) test=12851 device=mps
+  seed 42: test spearman 0.5543  (val 0.6633)  12.2s
+  seed 43: test spearman 0.5679  (val 0.6534)  12.3s
+  seed 44: test spearman 0.6399  (val 0.6589)  12.3s
+  seed 45: test spearman 0.6417  (val 0.6541)  17.7s
+  seed 46: test spearman 0.4497  (val 0.6527)  13.7s
+  seed 47: test spearman 0.6152  (val 0.6549)  13.2s
+  seed 48: test spearman 0.6365  (val 0.6611)  19.4s
+  seed 49: test spearman 0.6420  (val 0.6596)  15.9s
+  seed 50: test spearman 0.5652  (val 0.6580)  13.7s
+  seed 51: test spearman 0.6072  (val 0.6618)  17.1s
+
+onehot: per-seed 0.5920 +/- 0.0605  [0.4497, 0.6420]  seed-mean-pred 0.6368
+wrote evidence/runs_tape/stability.onehot.s42x10.json
