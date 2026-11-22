@@ -27,19 +27,29 @@ ESM_MODELS = {
 }
 
 
-def onehot(seqs: list[str]) -> np.ndarray:
-    """Flattened per-position one-hot. Requires equal lengths (true of FLIP GB1/AAV)."""
-    lengths = {len(s) for s in seqs}
-    if len(lengths) != 1:
-        raise ValueError(f"onehot needs equal-length sequences, saw {sorted(lengths)[:5]}...")
-    L = lengths.pop()
+def onehot(seqs: list[str]) -> tuple[np.ndarray, dict]:
+    """Flattened per-position one-hot, right-padded with zeros to the longest sequence.
+
+    Columns with no variance across the corpus carry no information for any head
+    that standardizes its inputs (they reduce to a bias), so they are dropped and
+    the count is recorded. FLIP AAV mutates a 28-residue window of a ~740 aa
+    capsid, so this removes the overwhelming majority of the 15 000 raw columns.
+    """
+    L = max(len(s) for s in seqs)
     X = np.zeros((len(seqs), L * len(AA)), dtype=np.float32)
     for i, s in enumerate(seqs):
         for j, c in enumerate(s):
             k = AA_INDEX.get(c)
             if k is not None:
                 X[i, j * len(AA) + k] = 1.0
-    return X
+    keep = X.std(axis=0) > 1e-8
+    meta = {
+        "padded_length": int(L),
+        "raw_columns": int(X.shape[1]),
+        "constant_columns_dropped": int((~keep).sum()),
+        "length_range": [int(min(len(s) for s in seqs)), int(L)],
+    }
+    return np.ascontiguousarray(X[:, keep]), meta
 
 
 def esm_embed(seqs: list[str], model_name: str, batch_size: int = 8) -> np.ndarray:
@@ -80,8 +90,9 @@ def build(csv: Path, rep: str, out_dir: Path) -> Path:
         print(f"cached {npy.name}")
         return npy
 
+    meta: dict = {}
     if rep == "onehot":
-        X = onehot(seqs)
+        X, meta = onehot(seqs)
     elif rep in ESM_MODELS:
         X = esm_embed(seqs, ESM_MODELS[rep])
     else:
@@ -97,6 +108,7 @@ def build(csv: Path, rep: str, out_dir: Path) -> Path:
                 "n": len(seqs),
                 "dim": int(X.shape[1]),
                 "seq_sha12": tag,
+                **meta,
             },
             indent=2,
         )

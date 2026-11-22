@@ -93,6 +93,10 @@ def main() -> None:
     p.add_argument("--csv", type=Path, required=True)
     p.add_argument("--features", type=Path, required=True)
     p.add_argument("--rep", required=True)
+    p.add_argument(
+        "--index-csv", type=Path, default=None,
+        help="csv whose row order the feature matrix follows (for shared/union features)",
+    )
     p.add_argument("--seeds", type=int, default=10)
     p.add_argument("--seed-base", type=int, default=42)
     p.add_argument("--out", type=Path, required=True)
@@ -105,8 +109,21 @@ def main() -> None:
     a = p.parse_args()
 
     df = pd.read_csv(a.csv)
-    sha = hashlib.sha256("".join(df["sequence"]).encode()).hexdigest()[:12]
-    X = np.load(find_features(a.features, a.rep, sha))
+    if a.index_csv is None:
+        sha = hashlib.sha256("".join(df["sequence"]).encode()).hexdigest()[:12]
+        X = np.load(find_features(a.features, a.rep, sha))
+    else:
+        # features were built once over a union of sequences; gather this split's rows
+        index = pd.read_csv(a.index_csv)
+        sha = hashlib.sha256("".join(index["sequence"]).encode()).hexdigest()[:12]
+        Xall = np.load(find_features(a.features, a.rep, sha), mmap_mode="r")
+        row_of = {s: i for i, s in enumerate(index["sequence"])}
+        missing = [s for s in df["sequence"] if s not in row_of]
+        if missing:
+            raise SystemExit(
+                f"{len(missing)} of {len(df)} sequences are absent from {a.index_csv}"
+            )
+        X = np.ascontiguousarray(Xall[[row_of[s] for s in df["sequence"]]])
     y = df["target"].to_numpy(dtype=np.float32)
 
     is_train = (df["set"] == "train").to_numpy()
