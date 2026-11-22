@@ -24,6 +24,10 @@ UA = "lit-scan/1.0"
 
 SEED_PATTERNS = [
     r"\b(?:random\s+)?seeds?\b",
+    r"±",
+    r"\+/-",
+    r"\bs\.?d\.?\s*=",
+    r"\bstd(?:ev)?\b",
     r"\b(\d+|one|two|three|four|five|ten)\s+(?:independent\s+|different\s+|separate\s+)?(?:runs?|trials?|replicates?|repetitions?)\b",
     r"\baverag(?:e|ed|ing)\s+over\b",
     r"\bmean\s*(?:±|\+/-|\+-)\b",
@@ -136,7 +140,8 @@ def main() -> None:
     done = fail = 0
     for i, rec in enumerate(pool[a.start : a.start + a.limit], start=a.start):
         dest = a.out / f"{rec['base_id']}.json"
-        if dest.exists():
+        body = a.out / f"{rec['base_id']}.txt"
+        if dest.exists() and (body.exists() or "no_fulltext" in dest.read_text()):
             done += 1
             continue
         got = fetch_html(rec["arxiv_id"])
@@ -155,6 +160,8 @@ def main() -> None:
             "baseline_contexts": contexts(text, BASELINE_PATTERNS),
         }
         dest.write_text(json.dumps(payload, indent=2))
+        # keep the full text so extraction can be revised without re-fetching
+        (a.out / f"{rec['base_id']}.txt").write_text(text)
         done += 1
         if i % 10 == 0:
             print(f"  [{i}] {rec['base_id']}  {len(text)} chars", flush=True)

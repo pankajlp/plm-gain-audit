@@ -1,0 +1,507 @@
+[
+  {
+    "base_id": "2611.25396",
+    "date": "2026-11-19",
+    "title": "Protein Functional Semantic Alignment via Representation Rectification",
+    "primary_category": "cs.LG",
+    "provisional": "no_seed_evidence",
+    "baseline_terms": [],
+    "sig_terms": [],
+    "protein_terms": true,
+    "n_chars": 70156,
+    "seed_contexts": [
+      "jection head Given a tokenized sequence, we extract the final-layer hidden states and compute a mean-pooled sequence embedding by averaging over non-padding tokens while excluding special tokens (e.g., BOS/CLS and EOS when applicable). A two-layer MLP projecti"
+    ]
+  },
+  {
+    "base_id": "2611.20986",
+    "date": "2026-11-16",
+    "title": "Calpha: Toward Native Biomolecular Intelligence in a General-Purpose Language Model",
+    "primary_category": "q-bio.QM",
+    "provisional": "no_seed_evidence",
+    "baseline_terms": [],
+    "sig_terms": [],
+    "protein_terms": true,
+    "n_chars": 5350,
+    "seed_contexts": []
+  },
+  {
+    "base_id": "2611.18846",
+    "date": "2026-11-13",
+    "title": "Multi-Assay Antibody Developability Prediction with Shared Structure-Language Representations",
+    "primary_category": "q-bio.BM",
+    "provisional": "no_seed_evidence",
+    "baseline_terms": [
+      "physicochemical"
+    ],
+    "sig_terms": [],
+    "protein_terms": true,
+    "n_chars": 5286,
+    "seed_contexts": [
+      "PLM embeddings (AbLang2, ESM2) on several assays; combining the streams gives a small but consistent gain in accuracy and reduces seed-to-seed variance. Multi-assay training raises Spearman rho for ovalbumin and SMP by about 0.1, where assays correlate and sha",
+      "ddings (AbLang2, ESM2) on several assays; combining the streams gives a small but consistent gain in accuracy and reduces seed-to-seed variance. Multi-assay training raises Spearman rho for ovalbumin and SMP by about 0.1, where assays correlate and share seque"
+    ]
+  },
+  {
+    "base_id": "2611.16881",
+    "date": "2026-11-12",
+    "title": "Protein Language Models Fail To Capture Contact Predictions Under Invariant Relabeling",
+    "primary_category": "q-bio.QM",
+    "provisional": "no_seed_evidence",
+    "baseline_terms": [],
+    "sig_terms": [],
+    "protein_terms": true,
+    "n_chars": 5056,
+    "seed_contexts": []
+  },
+  {
+    "base_id": "2611.16361",
+    "date": "2026-11-12",
+    "title": "MutAtlas: A PDB-Wide Energy-Guided Atlas of Protein Mutation Effects",
+    "primary_category": "cs.LG",
+    "provisional": "no_seed_evidence",
+    "baseline_terms": [
+      "Ablation"
+    ],
+    "sig_terms": [],
+    "protein_terms": true,
+    "n_chars": 58883,
+    "seed_contexts": []
+  },
+  {
+    "base_id": "2611.12000",
+    "date": "2026-11-09",
+    "title": "HyPLM Technical Report",
+    "primary_category": "cs.LG",
+    "provisional": "cv_only",
+    "baseline_terms": [],
+    "sig_terms": [],
+    "protein_terms": true,
+    "n_chars": 48473,
+    "seed_contexts": [
+      "Table 2 on AAV (two-vs-many, \u03c1 = 0.650 \\rho=0.650 ) and amylase (0.696), and second on Meltome (0.672) and fluorescence (0.669). Averaged over the ten regression splits used for summary statistics (Appendix A ), it scores 0.606, the highest of these models, a",
+      "depths 0.25, 0.5, 0.625, 0.75, 0.875 and 1.0 and select the layer and the regularization strength on the validation split, or by 5-fold cross-validation on the training split where a task has none (DGEB EC). Regression probes are closed-form ridge regressions"
+    ]
+  },
+  {
+    "base_id": "2611.11017",
+    "date": "2026-11-07",
+    "title": "ProtLink: Sequence and Multispecies Graph Context for Protein Interaction Prediction",
+    "primary_category": "cs.LG",
+    "provisional": "multi_k=3",
+    "baseline_terms": [
+      "ablation"
+    ],
+    "sig_terms": [],
+    "protein_terms": true,
+    "n_chars": 36675,
+    "seed_contexts": [
+      "pared with 0.951 for the homogeneous transformer; its AP decreases to 0.878 with two-hop-preferred negatives. In controlled three-seed experiments, three-layer full-graph HGT obtains an AP of 0.9701 \u00b1 0.0022 0.9701\\pm 0.0022 , exceeding an orthogroup-only mode",
+      "ma(s_{uv}))\\right]. (8) Training resamples one negative per positive each epoch. Validation and test negatives are fixed for each seed, and test negatives exclude validation negatives. Candidate non-edges are screened against the observed positive network. Bec",
+      "arning rate 10 \u2212 3 10^{-3} , weight decay 10 \u2212 5 10^{-5} , dropout 0.2, a maximum of 30 epochs, early-stopping patience of 5, and seeds 0, 1, and 2. The best checkpoint maximizes validation AP. Appendix A provides representative PyG implementation excerpts. 5",
+      "esent the much lower prevalence among all possible human pairs. For the new controlled experiments we report AP for each of three seeds and mean \u00b1 \\pm sample standard deviation (SD), without inferring statistical significance from three repetitions. Random neg",
+      "urations, and three-layer HGT in the orthogroup-only and full configurations. Each reported configuration has AP measurements for seeds 0, 1, and 2. We compare matched-depth models when assessing the contribution of non-human interactions, rather than treating",
+      "n entirely uncharacterized protein with no external context. We compare a sequence-only pair MLP with full multispecies HGT using seed-matched AP values for seeds 0, 1, and 2. The available summary reports AP, rather than per-protein or orthogroup-stratified o"
+    ]
+  },
+  {
+    "base_id": "2611.09818",
+    "date": "2026-11-06",
+    "title": "Generative Latent Priors for Interpreting and Steering Protein Language Models",
+    "primary_category": "cs.AI",
+    "provisional": "multi_k=3",
+    "baseline_terms": [
+      "physicochemical"
+    ],
+    "sig_terms": [],
+    "protein_terms": true,
+    "n_chars": 78153,
+    "seed_contexts": [
+      ". (2024) , a granularity set by dictionary size rather than by the data Leask et al. (2025) , and dictionaries that differ across random seeds Paulo and Belrose (2025) . Sparsity and linearity are imposed, which leaves open what a representation of the same ac",
+      "times}10^{-5} + 64.93 +64.93 4 \u00d7 10 \u2212 14 4{\\times}10^{-14} + 4.13 +4.13 C.3 The correction\u2019s own concept drift The \u03b1 = 0 \\alpha{=}0 run isolates what the loop does without steering. The edit is the identity there, but the loop still masks and resamples 10% of",
+      "er composition the GLP treats as typical. What the offset is made of is visible in the composition. The same residues move in all three runs: Leu + 5.9 / + 6.3 / + 6.7 +5.9/+6.3/+6.7 pp and Val + 5.4 / + 5.7 / + 4.0 +5.4/+5.7/+4.0 pp, with Glu, Lys, Arg and As",
+      "+5.9/+6.3/+6.7 pp and Val + 5.4 / + 5.7 / + 4.0 +5.4/+5.7/+4.0 pp, with Glu, Lys, Arg and Asp each down 1.3 1.3 \u2013 2.8 2.8 pp. The three runs share no data, contrast sets, starting proteins or steering vectors, only the correction operator. Those charge losses",
+      "number rather than a per-residue label. First, each protein becomes a single row: a unit\u2019s value for a protein is its activation averaged over that protein\u2019s residues. Second, candidates are ranked by | \\lvert Pearson r | r\\rvert between that pooled value and",
+      "128 , 0.257 , 0.385 , 0.642 } \\alpha\\in\\{0,0.032,0.064,0.128,0.257,0.385,0.642\\} , and report effects in units of each property\u2019s standard deviation across the 5,790 5{,}790 -sequence UniRef50 pool the contrasts were drawn from ( 0.456 0.456 GRAVY, 0.060 0.060"
+    ]
+  },
+  {
+    "base_id": "2611.09377",
+    "date": "2026-11-06",
+    "title": "KineCouple: Substrate-conditioned residual readout for enzyme kinetic prediction",
+    "primary_category": "cs.AI",
+    "provisional": "multi_k=3",
+    "baseline_terms": [
+      "Ablation",
+      "randomly initialized"
+    ],
+    "sig_terms": [],
+    "protein_terms": true,
+    "n_chars": 35778,
+    "seed_contexts": [
+      "ntion in the experiment record. Metrics are computed after merging held-out predictions across folds, rather than averaged across random seeds. The available record does not include fold assignments, sample counts, checkpoint selection rules, or run configurat",
+      "\\ddagger : reference-table values. Split and aggregation protocols have not been verified across sources, and variability across random seeds is unavailable. k cat k_{\\mathrm{cat}} K m K_{\\mathrm{m}} Method RMSE \u2193 \\downarrow PCC \u2191 \\uparrow SCC \u2191 \\uparrow RMSE",
+      "udies on the k cat k_{\\mathrm{cat}} and K m K_{m} prediction benchmarks. We report the average results over ten Folds, with three random seeds per fold. Five variants are considered: (1) Baseline (A) , the original CataPro model; (2) Continued Training (B) , w",
+      "ple on the k cat k_{\\mathrm{cat}} and K m K_{m} prediction benchmarks. Results are averaged over Folds 1, 5, 6, and 9, with three random seeds per fold. The best results are highlighted in bold. Lower RMSE and MAE indicate better performance, whereas higher PC",
+      "he Appendix. Table 2: Ablation study of KineCouple on the k cat k_{\\mathrm{cat}} and K m K_{m} prediction benchmarks. Results are averaged over Folds 1, 5, 6, and 9, with three random seeds per fold. The best results are highlighted in bold. Lower RMSE and MAE",
+      "ent trainable parameters and share only frozen feature caches. Training uses mean squared error scaled by the training-fold label standard deviation; network outputs remain on the original logarithmic scale. Appendix A specifies the conditioning network, initi"
+    ]
+  },
+  {
+    "base_id": "2611.09046",
+    "date": "2026-11-06",
+    "title": "When Can You Trust Neural Critics? Auditing Mutual Information Estimates of Higher-Order Epistasis in Protein ",
+    "primary_category": "cs.LG",
+    "provisional": "multi_k=2",
+    "baseline_terms": [],
+    "sig_terms": [],
+    "protein_terms": true,
+    "n_chars": 78293,
+    "seed_contexts": [
+      "alue, regardless of estimator family [ 15 , 8 ] . We first audit the instability\u2019s own structure directly: variance across critic seeds within a fixed run and pairing scheme, matched differences between independently executed runs, and matched differences betw",
+      "ring schemes on the same trained checkpoint, finding no systematic bias between runs and a magnitude comparable to ordinary cross-seed retraining variability, alongside a pairing-scheme sensitivity that independently reproduces the effect found in Experiment 2",
+      "solating estimator choice from the underlying scientific question: two of three tested alternatives stabilize the estimate across seeds while one does not. Extending the diagnostic at the representation dimensionalities of two additional protein language model",
+      "the matched dimension, recover materially less signal than required, despite correct signal ordering and stable estimates across seeds. A control critic given the true signal direction, which also reduces its input to a single dimension, recovers 93.3 93.3 %",
+      "ast ( \u0394 HO \u2212 LO = \u2212 0.107 \\Delta_{\\mathrm{HO-LO}}=-0.107 ), but an independent replication using identical code, data, and critic seeds reduced this to \u2212 0.017 -0.017 , with sign changing across otherwise reasonable evaluation-pairing choices ( \u2212 0.011 -0.011",
+      "l statistic\u2019s own cross-pairing COV variation. The new statistic\u2019s raw values (Table 10 ) stay consistently away from zero across seeds for every stable estimator, so the low COV here reflects genuine absolute stability rather than a near-zero-mean artifact. D"
+    ]
+  },
+  {
+    "base_id": "2611.05055",
+    "date": "2026-11-03",
+    "title": "Ablating Design Choices for Protein Ensemble Generators Across Structural Regimes",
+    "primary_category": "q-bio.BM",
+    "provisional": "multi_k=5",
+    "baseline_terms": [
+      "physicochemical"
+    ],
+    "sig_terms": [],
+    "protein_terms": true,
+    "n_chars": 47626,
+    "seed_contexts": [
+      "protein. For each protein we take the ratio of the variant\u2019s RMSE to the base model\u2019s, each averaged geometrically over training seeds, and summarise a cell by the geometric mean of these ratios, reported as a percentage change. Its 95% confidence interval ac",
+      "ese ratios, reported as a percentage change. Its 95% confidence interval accounts for variation across both proteins and training seeds (Appendix F ), and we regard a change as negligible when this interval lies within \u00b1 5 % \\pm 5\\% . In addition, we report th",
+      "ich are chosen to explore modelling across structural regimes (further details in Appendix C ). We train the base model with five random seeds and each variant with three, and sample all models with the same settings. Sequence conditioning. While structure pre",
+      "terval contains zero but extends beyond it. The AUC is a single score per run, so its interval reflects variation across training seeds only. Table 1: Absolute scores for the three baselines, the base model, the Kabsch variant and the two training-source varia",
+      "without the default physicality filter (Appendix E ). The base model and variants are first averaged geometrically over training seeds. AUC is the benchmark\u2019s LOWESS-AUC. Lower is better. Cells contain 313/34/42/42 (SAXS) and 237/220/40/150 (CS) proteins. SAX",
+      "rests on two observables. In particular, SAXS on ordered proteins tests compactness rather than fold correctness, and with three seeds per variant, the small non-ordered SAXS cells (34\u201342 proteins) leave several comparisons unresolved. References [1] John Jum"
+    ]
+  },
+  {
+    "base_id": "2610.39891",
+    "date": "2026-10-29",
+    "title": "TACFormer: Transformer-Based Generative Model for Target-Conditioned De Novo PROTAC Design",
+    "primary_category": "cs.LG",
+    "provisional": "multi_k=3",
+    "baseline_terms": [
+      "Physicochemical"
+    ],
+    "sig_terms": [
+      "p = 0.9"
+    ],
+    "protein_terms": true,
+    "n_chars": 117512,
+    "seed_contexts": [
+      "ing P \u03b8 \u200b ( \ud835\udc2c \u2223 \ud835\udc33 p ) P_{\\theta}(\\mathbf{s}\\mid\\mathbf{z}_{p}) . Both models share the same molecular backbone. For each sampling seed, the unconditional model generates 200,000 molecules. The conditional model generates 10,000 molecules per POI, yielding the",
+      "13, which are excluded from training, without additional fine-tuning. Each zero-shot target receives 10,000 generated samples per seed. Training hyperparameters and sampling settings are provided in Appendices A.8 and B.7 , respectively. 4.3 Evaluation Let \ud835\udca2 \\",
+      "836 . Fine-tuning this molecular prior on PROTAC data without protein conditioning produces the unconditional model. Across three seeds, with 200,000 generated molecules per seed, the unconditional model achieves ( 99.05 \u00b1 0.01 ) % (99.05\\pm 0.01)\\% validity,",
+      "OTAC data without protein conditioning produces the unconditional model. Across three seeds, with 200,000 generated molecules per seed, the unconditional model achieves ( 99.05 \u00b1 0.01 ) % (99.05\\pm 0.01)\\% validity, ( 47.13 \u00b1 0.14 ) % (47.13\\pm 0.14)\\% uniquen",
+      "conditional fidelity for the seen POIs. We generate 10,000 molecules per target and report metrics averaged across three sampling seeds. Table 1 : Target-wise generation quality and conditional fidelity across the seen POIs. Generation metrics and nearest-neig",
+      "s the seen POIs. Generation metrics and nearest-neighbor purity are reported as mean (standard deviation) across three generation seeds. Best per-target values in each column are shown in bold. POI Validity (%) Uniqueness (%) Novelty (%) Diversity \u0394 NLL \\Delta"
+    ]
+  },
+  {
+    "base_id": "2610.30394",
+    "date": "2026-10-21",
+    "title": "Escaping the Phylogenetic Trap: Persistent Homology Enables Cross-Species Ion Channel Classification via Multi",
+    "primary_category": "cs.LG",
+    "provisional": "single_explicit",
+    "baseline_terms": [
+      "one-hot",
+      "physicochemical"
+    ],
+    "sig_terms": [],
+    "protein_terms": true,
+    "n_chars": 48575,
+    "seed_contexts": [
+      "e fundamental strength of the multimodal ESM+GAT backbone. Table 1: In-Distribution Performance: Random split (80/20, stratified, seed=42). Results report overall accuracy, per-class F1 scores, and macro F1 based on the optimal checkpoint selected within a max",
+      "athcal{D}_{\\text{test}}=\\{i:t_{i}=t^{*}\\}. We perform five-fold leave-one-taxon-out cross-validation and report mean accuracy and standard deviation. This measures the ability to classify compounds from an organism type never seen during training. Dataset We c",
+      "Table 2: Out-of-Distribution Performance: Taxa leave-one-out cross-validation accuracy (%) per taxa, mean among all taxa and the standard deviation for all the models. Last fold for baseline 7 was out of memory. McNemar exact test vs. PH-GNN on paired per-pro"
+    ]
+  },
+  {
+    "base_id": "2610.26747",
+    "date": "2026-10-19",
+    "title": "recAMPLIFY: Large-Scale Pretraining of Recursive Protein Language Models",
+    "primary_category": "cs.LG",
+    "provisional": "multi_k=5",
+    "baseline_terms": [
+      "Ablation",
+      "randomly initialized"
+    ],
+    "sig_terms": [],
+    "protein_terms": true,
+    "n_chars": 109552,
+    "seed_contexts": [
+      "econdary-structure prediction (SSP) ( Rao et al., 2019 ) . For each supervised task, we report the mean test performance over 5 5 seeds after re-training the best configuration from a 50 50 -trial Bayesian TPE hyperparameter search. Further evaluation and hype",
+      "ts exist, we report the aggregate size. Validation uses the dataset\u2019s own split where one exists and a random 10 % 10\\% of train (seed 42 42 ) otherwise. \u201cMetric\u201d follows Chen et al. [2025] and is also the hyperparameter-selection criterion. Results for all 18",
+      "10 % 10\\% of the training set), and selection uses the task\u2019s reported metric. The best configuration is then retrained with 5 5 random seeds and evaluated on the held-out test split. We report the mean (main-paper Table 1 ) and the standard deviation (Append",
+      "ts Table 3 : Mean \u00b1 \\pm standard deviation scores for supervised probes reported by rerunning the best HPO configuration over 5 5 seeds. Small standard deviations signify that most of the gains from recursion are beyond the noise regime. Model Fold \u2191 \\uparrow",
+      "eps. Each cell reports the mean \u00b1 \\pm standard deviation of the test-set metric for the best HPO configuration retrained with 5 5 random seeds (\u00a7 C.2 ). \u201cMetric\u201d follows the source benchmark (Table 2 ): accuracy, MCC or AUROC for classification and Spearman or",
+      "is the exception, with \u03c4 = 3 \\tau=3 and \u03c4 = 5 \\tau=5 matching or exceeding full BPTT, while \u03c4 = 4 \\tau=4 becomes unstable across seeds at larger depths. Figure 10 : Varying context type for L = 4 L=4 . All models are evaluated at the matched L eval = 4 L_{\\ma"
+    ]
+  },
+  {
+    "base_id": "2610.26651",
+    "date": "2026-10-19",
+    "title": "The Effectiveness and Durability of Pretraining Data Filtering in Protein Language Models",
+    "primary_category": "cs.LG",
+    "provisional": "multi_k=3",
+    "baseline_terms": [],
+    "sig_terms": [
+      "bootstrap"
+    ],
+    "protein_terms": true,
+    "n_chars": 115738,
+    "seed_contexts": [
+      "ons Pretraining large protein language models from scratch is expensive. We therefore limited our training runs above to a single seed per model, which reduces our confidence about the statistical significance of differences between models at different scales.",
+      "unfiltered reference, paired by assay. Bars are pointwise 95% percentile intervals from 20,000 paired-assay bootstrap resamples (seed 0). Negative values indicate lower predictive performance; the dashed zero line denotes reference performance. Orange: viral",
+      "alpha 32 Adapter dropout 0.05 Trainable parameters 5,898,240 Optimiser AdamW Learning rate 10 \u2212 4 10^{-4} Fine-tuning steps 3,000 Seeds 3 Training variant cap 2,000 per assay Training window 512 residues, centred on the mutation Evaluation interval 500 steps W",
+      "enign-only regime uses the 122 non-viral assays and excludes the 13 viral training assays. Both regimes use the same split, three seeds and held-out test sets. Within each regime, all three checkpoints use the same fixed training pool. We evaluate all valid su",
+      "multi-site mutations, at each evaluation step. Confidence intervals use 10,000-resample bootstraps over crossed protein-group and seed axes, preserving the pairing between models. These intervals are conditional on the fixed checkpoints. For paired tests, we f",
+      "eserving the pairing between models. These intervals are conditional on the fixed checkpoints. For paired tests, we first average seeds within each assay, then apply two-sided sign-flip permutation tests over protein groups. We apply a Holm correction within e"
+    ]
+  },
+  {
+    "base_id": "2610.30180",
+    "date": "2026-10-19",
+    "title": "QProtFuse: Query-Guided Layer Fusion for Retrieval-Augmented Protein Function Prediction",
+    "primary_category": "cs.IR",
+    "provisional": "multi_k=3",
+    "baseline_terms": [
+      "Ablation"
+    ],
+    "sig_terms": [],
+    "protein_terms": true,
+    "n_chars": 64211,
+    "seed_contexts": [
+      "tion details are provided in Appendix D . Table 1: Retrieval results on Prot-Inst-OOD (%). We average QProtFuse scores over three seeds. \u201c \u2217 \u201d denotes the two-channel \u201c5+5\u201d strategy of ProtQueSt, with no instruction filtering during the structural channel. Bot",
+      "al group weights, respectively. Right: Joint training versus single PP-only or PA-only training. We report the results over three seeds. Query-guided fusion improves retrieval effectiveness. We compare QProtFuse with fixed mean and global weights variants in F",
+      "). Columns indicate the ESM layer ranges in each group. Weights are averaged over test queries within each task and across three seeds. Figure 6: Three examples of query-specific group weights, each with its corresponding query shown below. Bars indicate the",
+      "specific group weights, each with its corresponding query shown below. Bars indicate the mean and standard deviation across three random seeds. The PP and PA objectives reinforce each other. As shown in Figure 4 (right), joint training improves both retrieval",
+      "elow. Appendix E Training Configuration QProtFuse. Our model has 5.13M trainable parameters. We train it for 30 epochs with three random seeds (20260929, 20260930, and 20261001) using mixed bfloat16 precision on four NVIDIA H200 GPUs. The batch size is 256 per",
+      ". We use AdamW with a learning rate of 2 \u00d7 10 \u2212 4 2\\times 10^{-4} , weight decay of 0.01 0.01 , cosine learning-rate decay, and a random seed of 42. For ProtQueSt, whose code was unavailable for our experiments, we independently implement and train the model f"
+    ]
+  },
+  {
+    "base_id": "2610.27001",
+    "date": "2026-10-19",
+    "title": "HierDTA: Hierarchical Structure-Aware Representation Learning for Drug--Target Affinity Prediction",
+    "primary_category": "cs.LG",
+    "provisional": "multi_k=5",
+    "baseline_terms": [
+      "one-hot",
+      "physicochemical",
+      "Ablation"
+    ],
+    "sig_terms": [],
+    "protein_terms": true,
+    "n_chars": 70961,
+    "seed_contexts": [
+      "eters are summarized in Supporting Information S3. For a fair comparison, each experiment was repeated five times using different random seeds, and the mean and standard deviation were reported. 4 Results and Discussion To comprehensively evaluate the effectiv",
+      "directly as a residual term (No TLA). Figure 4 reports the comparison across the four evaluation settings generated from a single random seed. Under the warm setting, TLA attains a lower MSE and a substantially higher r m 2 r_{m}^{2} . The most pronounced impr",
+      "ing Information S3. For a fair comparison, each experiment was repeated five times using different random seeds, and the mean and standard deviation were reported. 4 Results and Discussion To comprehensively evaluate the effectiveness of HierDTA, we compare it",
+      "The batch size and other hyperparameters are summarized in Supporting Information S3. For a fair comparison, each experiment was repeated five times using different random seeds, and the mean and standard deviation were reported. 4 Results and Discussion To c"
+    ]
+  },
+  {
+    "base_id": "2610.24458",
+    "date": "2026-10-17",
+    "title": "Generative Retrieval for Reverse Target Fishing with a Proteome-Scale Benchmark",
+    "primary_category": "cs.LG",
+    "provisional": "multi_k=5",
+    "baseline_terms": [
+      "Ablation"
+    ],
+    "sig_terms": [
+      "bootstrap"
+    ],
+    "protein_terms": true,
+    "n_chars": 87307,
+    "seed_contexts": [
+      "sions. Validation-based selection. A.4 Metrics and Statistical Reporting Full-catalogue retrieval. Measured-panel discrimination. Seeds and uncertainty. A.5 Release Contents and Provenance B Model Implementation and Training B.1 Protein Features and Sequence P",
+      "d to this common setting; configurations and implementation details are provided in Appendix D . Headline neural results use five seeds and a ceiling of 22,560 updates. Checkpoints are selected lexicographically by validation R@10, R@50, and MRR; non-neural ba",
+      "ation reuses the catalogue-retrieval scores without reselection. Internal ablations use a common training recipe and three paired seeds. Statistical intervals are obtained by paired molecule bootstrap and are conditional on the fitted models. 5.1 Main Results",
+      "All methods rank the same 20,431-protein catalogue for 198 held-out molecules. Neural results are means \u00b1 \\pm sample SD over five seeds; non-neural baselines report single results. Higher is better ( \u2191 \\uparrow ). 198 queries \u00d7 \\times 20,431 proteins Method R@",
+      "rastive training, oracle masking, matched random masking, and GenFish with the same visible positives. Bars show means over three seeds with sample-standard-deviation error bars. Oracle masking increases held-out R@50 from 31.30% to 33.40% and hidden-positive",
+      "er and retrieval training, to assess code\u2013family structure. Several large groups contain coherent families; across five tokenizer seeds, 34.98 % \u00b1 1.34 % 34.98\\%\\pm 1.34\\% of annotated pairs sharing a level-1 code also share a Pfam, compared with 0.47% of all"
+    ]
+  },
+  {
+    "base_id": "2610.22445",
+    "date": "2026-10-15",
+    "title": "Null Controls Are Necessary but Not Sufficient: Evaluating Acceptance Guards for Scientific Discovery and Inte",
+    "primary_category": "cs.AI",
+    "provisional": "multi_k=60",
+    "baseline_terms": [
+      "ablation"
+    ],
+    "sig_terms": [],
+    "protein_terms": true,
+    "n_chars": 97267,
+    "seed_contexts": [
+      "\u2019s conserved charge through that map and requires the target\u2019s own evolution to conserve it to 10 \u2212 3 10^{-3} . Table 5 gives six seeds, each with a matched control whose symmetry is deliberately broken. Table 5: L3 transfer across six seeds, each with a match",
+      "-3} . Table 5 gives six seeds, each with a matched control whose symmetry is deliberately broken. Table 5: L3 transfer across six seeds, each with a matched control whose symmetry is deliberately broken. The structure test is scored both on the 40 states the m",
+      "CKA, accepting at R 2 > 0.5 R^{2}>0.5 or CKA > 0.5 \\mathrm{CKA}>0.5 . Guard 2 runs 480 480 interventions per configuration ( 5 5 seeds \u00d7 \\times 8 8 positions \u00d7 \\times 12 12 donors, each scored over 16 16 recipient sequences). Each adds the mapped difference a",
+      "a decay, the case the operation is modelled on, was far larger than a few percent. The proposer is the limiting component. Across three runs, a world whose residual hides 0.4 \u200b sin \u2061 3 \u200b x 0.4\\sin 3x yielded eight proposals of which two to five were accepted;",
+      "quasicrystals [ Shechtman et al., 1984 ] vs. twinning [ Pauling, 1985 ] 100% 50% 42% two constructed controls 83% 25% 38% pooled, 60 trials 87% 48% 53% Accuracy is far above chance when the model can recognise the episode ( p = 5 \u00d7 10 \u2212 9 p=5{\\times}10^{-9} )",
+      "eld-out R 2 R^{2} about the fitting mean, plus linear CKA, accepting at R 2 > 0.5 R^{2}>0.5 or CKA > 0.5 \\mathrm{CKA}>0.5 . Guard 2 runs 480 480 interventions per configuration ( 5 5 seeds \u00d7 \\times 8 8 positions \u00d7 \\times 12 12 donors, each scored over 16 16 re"
+    ]
+  },
+  {
+    "base_id": "2610.21200",
+    "date": "2026-10-15",
+    "title": "Poisoning the corpora of protein design systems during pre-training and retrieval",
+    "primary_category": "cs.LG",
+    "provisional": "no_seed_evidence",
+    "baseline_terms": [],
+    "sig_terms": [],
+    "protein_terms": true,
+    "n_chars": 5525,
+    "seed_contexts": []
+  },
+  {
+    "base_id": "2610.19738",
+    "date": "2026-10-14",
+    "title": "ProtModernBERT: Compute-Efficient Protein Language Modeling",
+    "primary_category": "cs.LG",
+    "provisional": "multi_k=8",
+    "baseline_terms": [
+      "physicochemical",
+      "ablation",
+      "randomly initialized"
+    ],
+    "sig_terms": [],
+    "protein_terms": true,
+    "n_chars": 49010,
+    "seed_contexts": [
+      "a batch size of 128. A-B Fine-tuning results We fine-tune ProtModernBERT with different hyperparameters. We report the results on 8 different runs in Figures 4 and 5 . We present in Table VI a mapping between the experiment\u2019s label and its corresponding set of"
+    ]
+  },
+  {
+    "base_id": "2610.18481",
+    "date": "2026-10-13",
+    "title": "ProTok: Unified Protein Tokenization via Modular Multi-Codebook Quantization",
+    "primary_category": "cs.LG",
+    "provisional": "multi_k=5",
+    "baseline_terms": [
+      "Ablation"
+    ],
+    "sig_terms": [],
+    "protein_terms": true,
+    "n_chars": 71056,
+    "seed_contexts": [
+      "coefficients. Stage 2 decoder fine-tuning. Optimization. B Evaluation Setup StructTokenBench benchmarks and hyperparameter sweep. Seed variability. Native reconstruction quality. Cross-modal probes. Assets and licenses. C Codebook Analysis Cross-tokenizer util",
+      "For each task, we train a lightweight classifier on frozen tokens and report test performance at the best validation checkpoint (seed variance in Appendix B ); conformational tasks are evaluated zero-shot. In the ProTok str mode, only the structure groups are",
+      "12}\\} , each trained for 10,000 steps of AdamW ( Loshchilov and Hutter, 2019 ) with a cosine schedule, batch size 8, and a shared random seed. We select the configuration with the best validation metric ( F 1 F_{1} for classification, Spearman \u03c1 \\rho for regre",
+      "m{5},\\textrm{10},\\textrm{25},\\textrm{50},\\textrm{100}\\} and reporting the best Spearman correlation with the ground truth labels. Seed variability. To quantify run-to-run variance, we rerun the validation-selected configuration of ProTok str with five seeds (1",
+      "labels. Seed variability. To quantify run-to-run variance, we rerun the validation-selected configuration of ProTok str with five seeds (1234, 42, 7, 2024, 31337) on five representative tasks spanning global classification, residue-level classification, and re",
+      "representative tasks spanning global classification, residue-level classification, and residue-level regression (Table S1 ). The seed standard deviation is at most 2.7 macro F 1 F_{1} (remote homology fold) and at most 0.4 AUROC or Spearman \u03c1 \\rho on the othe"
+    ]
+  },
+  {
+    "base_id": "2611.05396",
+    "date": "2026-10-13",
+    "title": "A System One Approach to General Protein Evolution",
+    "primary_category": "q-bio.QM",
+    "provisional": "variance_only",
+    "baseline_terms": [
+      "one-hot",
+      "Ablation"
+    ],
+    "sig_terms": [],
+    "protein_terms": true,
+    "n_chars": 77376,
+    "seed_contexts": [
+      "bution to p \u2217 p^{\\ast} , and the improvement loss is the binary cross-entropy (BCE) of each improvement probability to its label, averaged over the offered edits: \u2112 choice = \u2212 \u2211 j p j \u2217 log softmax ( z ) j , \u2112 improve = 1 | \ud835\udcaa | \u2211 a \u2208 \ud835\udcaa BCE ( \u03c3 ( v a ) , y a \u2217",
+      "wild-type-marginal log-odds of the edit from one pass over the parent, and ESM-1v by the masked marginal at the edited position, averaged over its five published checkpoints. The screen\u2019s tables are means over panels. Transfer metrics. The transfer diagnostic",
+      "asured variant x \u2032 x^{\\prime} has an outcome y c \u200b ( x \u2032 ) y_{c}(x^{\\prime}) , oriented so that higher is better, and a replicate standard deviation s c \u200b ( x \u2032 ) s_{c}(x^{\\prime}) when replicates exist. Outcomes are compared only within the same context. Offe",
+      "ard deviations of the edited sequence and the reference. The reference value is the median of its replicate measurements, and its standard deviation is the larger of its recorded replicate standard deviation and the standard error across those measurements. Mi",
+      "e reference value is the median of its replicate measurements, and its standard deviation is the larger of its recorded replicate standard deviation and the standard error across those measurements. Missing replicate standard deviations are imputed using the m",
+      "dian of its replicate measurements, and its standard deviation is the larger of its recorded replicate standard deviation and the standard error across those measurements. Missing replicate standard deviations are imputed using the median within the assay cont"
+    ]
+  },
+  {
+    "base_id": "2610.07607",
+    "date": "2026-10-06",
+    "title": "Linear Fitness Subspace in Protein Language Models Enables Sample-Efficient Directed Evolution",
+    "primary_category": "q-bio.QM",
+    "provisional": "multi_k=5",
+    "baseline_terms": [
+      "one-hot",
+      "BLOSUM",
+      "Ablation"
+    ],
+    "sig_terms": [
+      "Wilcoxon"
+    ],
+    "protein_terms": true,
+    "n_chars": 76476,
+    "seed_contexts": [
+      "ge-scale static fitness-prediction validation; 18 search-statistics assays satisfy the additional requirements for complete multi-seed budgeted-search traces and significance testing; and five multi-mutant benchmarks test transfer to combinatorial variants. Ta",
+      "{\\max}=500 , the same N init = 32 N_{\\mathrm{init}}=32 initial labeled variants, the same applicable mutation search space, and 5 random seeds for every supervised method. Metrics include Spearman correlation, best fitness found, Budget-to-Top-5%, AUC of best-",
+      "arizes the budgeted search results. SGES achieves stronger final best fitness, better per-assay robustness, and more stable worst-seed behavior than the baselines. This supports the central claim that search in the learned LFS is more sample-efficient than sea",
+      "on than baselines, with higher final best fitness, better per-assay robustness, stronger multi-metric ranking, and improved worst-seed behavior against GP-BO. Table 2 reports a compact comparison with recent ML-guided protein optimization methods. SGES obtains",
+      "n-feature choice. All budgeted-search rows use the same oracle budget, initial labeled set, applicable mutation search space, and random seeds. Variant / Feature Panel k k Surrogate Acquisition Avg. \u03c1 \\rho Avg. Best Random projection A 8 Deep ensemble UCB 0.51",
+      "res, or mean-pooled PLM embeddings. Method Budget Initial set Candidate / proposal setting Representation Surrogate / acquisition Seeds Random Search 500 Same N init = 32 N_{\\mathrm{init}}=32 Same mutation search space No learned PLM surrogate Random 5 AdaLead"
+    ]
+  },
+  {
+    "base_id": "2610.04850",
+    "date": "2026-10-04",
+    "title": "PIT-GCL: Protein Interaction using Topological Graph Contrastive Learning",
+    "primary_category": "cs.LG",
+    "provisional": "multi_k=5",
+    "baseline_terms": [
+      "one-hot",
+      "BLOSUM",
+      "Ablation"
+    ],
+    "sig_terms": [
+      "bootstrap"
+    ],
+    "protein_terms": true,
+    "n_chars": 111755,
+    "seed_contexts": [
+      "55 51{,}755 cluster representatives, and this is the fold their release prescribes - which we partition 80 / 10 / 10 80/10/10 per seed, with their re-pairing protocol for negatives. For TCR-pMHC we use the STAG benchmark\u2019s own train/test split [ 34 ] unchanged",
+      "zed first. Unless a caption says otherwise, every entry in Tables 1 , 2 and 11 is a mean \u00b1 \\pm standard deviation over five runs, seeds 42 42 \u2013 46 46 ; what a seed varies differs by benchmark: on PPIRef it redraws the whole 80 / 10 / 10 80/10/10 partition, so",
+      "ays otherwise, every entry in Tables 1 , 2 and 11 is a mean \u00b1 \\pm standard deviation over five runs, seeds 42 42 \u2013 46 46 ; what a seed varies differs by benchmark: on PPIRef it redraws the whole 80 / 10 / 10 80/10/10 partition, so the spread covers split, init",
+      "ition, so the spread covers split, initialisation and negative sampling; on STAG the test split is fixed by the benchmark and the seed redraws the train/validation partition; on PPB-Affinity all three splits are fixed by the benchmark and the seed varies initi",
+      "enchmark and the seed redraws the train/validation partition; on PPB-Affinity all three splits are fixed by the benchmark and the seed varies initialisation and batch order only. Throughout, the best result in a column is in bold and the runner-up is underline",
+      "ins 0.0462 0.0462 AUC and between 0.0409 0.0409 and 0.0588 0.0588 on the other four. Both methods are averaged over the same five seeds, so these margins can be read against the seed-to-seed spread of the comparison itself: each is between 6.4 6.4 and 9.6 9.6"
+    ]
+  },
+  {
+    "base_id": "2610.03978",
+    "date": "2026-10-02",
+    "title": "Learning Latent Protein Languages for Autoregressive Generation",
+    "primary_category": "cs.LG",
+    "provisional": "multi_k=2",
+    "baseline_terms": [
+      "one-hot",
+      "physicochemical",
+      "Ablation"
+    ],
+    "sig_terms": [],
+    "protein_terms": true,
+    "n_chars": 124580,
+    "seed_contexts": [
+      "nd target length but does not specify exact repeat counts or sequence-generation temperatures. Our reported subsets use selection seed 42 42 . Additional generation under the same condition fills retained sets when needed. Our rows report these fixed-seed eval",
+      "election seed 42 42 . Additional generation under the same condition fills retained sets when needed. Our rows report these fixed-seed evaluation sets without uncertainty estimates across independent evaluation repeats. A.9 Structure-Side De Novo Evaluation SL",
+      "e eight-epoch training budget. The sequence encoder, autoregressive decoder, data split, and optimizer setup are fixed across the two runs. Figure 4 reports train loss and validation perplexity across epochs. The speed annotations summarize when GCP-VQVAE Lite",
+      "15 15 \u00d7 \\times and 48 48 \u00d7 \\times more protein samples than UniRef50. Table 5: Structure-design results on ProteinBench [ 52 ] , averaged over target lengths 50, 100, 300, and 500. Quality Diversity Novelty Model scTM \u2191 \\uparrow scRMSD \u2193 \\downarrow TM similar",
+      "rs used by the GCP-VQVAE direction loss. The reconstruction terms considered in our tokenizer study are defined per structure and averaged over the batch, \u2112 coord \\displaystyle\\mathcal{L}_{\\mathrm{coord}} = 1 3 \u200b | \ud835\udc9c s | \u200b \u2211 ( t , a ) \u2208 \ud835\udc9c s \u2016 \ud835\udc32 ^ s , t , a \u2212 \ud835\udc32",
+      "c{1}{d_{\\mathrm{ESM}}|T_{s}|}\\sum_{t\\in T_{s}}\\|\\hat{\\mathbf{e}}_{s,t}-\\mathbf{e}_{s,t}\\|_{2}^{2}. These auxiliary terms are also averaged over the batch before weighting. Using the final SLL tokenizer coefficients, the objective combines the active reconstruc"
+    ]
+  }
+]
