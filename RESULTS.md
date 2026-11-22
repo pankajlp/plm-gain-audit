@@ -162,3 +162,106 @@ splits papers lead with.**
 - Three of seven splits. `des_mut` / `mut_des` (the designed-vs-mutant
   direction pair) are untouched and would be the interesting next cut.
 - Still one head architecture and frozen features on both benchmarks.
+
+---
+
+## Run 3 — TAPE fluorescence and stability, 10 seeds per arm (2026-11-22)
+
+Both tasks at full size, no subsampling: fluorescence 54 025 sequences
+(GFP, 235–237 aa), stability 68 977 (designed mini-proteins, 43–50 aa).
+TAPE ships its own validation split, so `run_task.py` now uses the given
+`valid` rows instead of carving 10% off train — one fewer arbitrary choice
+than on GB1 and AAV.
+
+### Seed bands
+
+`evidence/seed_bands_tape.txt`
+
+| task | arm | per-seed mean | sd | min | max | range |
+|---|---|---|---|---|---|---|
+| fluorescence | onehot | 0.6689 | 0.0031 | 0.6646 | 0.6730 | 0.008 |
+| fluorescence | esm2_650m | 0.6134 | 0.0111 | 0.5957 | 0.6256 | 0.030 |
+| stability | onehot | 0.5920 | 0.0605 | 0.4497 | 0.6420 | 0.192 |
+| stability | esm2_650m | 0.6429 | 0.0382 | 0.5836 | 0.6906 | 0.107 |
+
+### Representation deltas
+
+`evidence/comparisons_tape/`
+
+| task | Δ seed-mean | CI95 | p | n=1 Δ range | % opposite sign |
+|---|---|---|---|---|---|
+| fluorescence | −0.0494 | [−0.054, −0.044] | <1e-4 | −0.077 … −0.039 | 0% |
+| stability | +0.0274 | [+0.015, +0.040] | <1e-4 | **−0.058 … +0.241** | **23%** |
+
+### The sharpest result in the project so far
+
+TAPE **stability** is not a designed extrapolation split. It is the ordinary
+split everyone reports, with **53 614 training examples**. And on it:
+
+- the true effect is small but real: Δ = +0.027, p < 1e-4
+- a single run per arm could report anything from **−0.058 to +0.241**
+- **23% of single-run pairings get the sign backwards**
+- the largest single-run report, +0.241, is **8.8× the true effect**
+
+So a one-seed-per-arm experiment on this benchmark can honestly report
+"ESM-2 embeddings improve Spearman by 0.24" when the real figure is 0.027.
+The inflation is not symmetric noise: the one-hot arm has a long low tail
+(one seed at 0.4497 against a 0.592 mean), so an unlucky baseline run
+manufactures a large apparent gain.
+
+This removes the easy defence that the problem only affects contrived
+extrapolation splits. It affects a standard split with 50k training rows.
+
+### Fluorescence goes the other way
+
+ESM-2 loses clearly on fluorescence (Δ = −0.049, p < 1e-4, 0% sign flips) —
+a tight, reliable, negative result. Together with AAV `sampled` (+0.011) and
+AAV `one_vs_many` (+0.387), frozen ESM-2 650M now wins 4 of the 10
+task-split comparisons in this project and loses 6. There is no general
+verdict, which is consistent with the withdrawal recorded in Run 2.
+
+---
+
+## Cross-benchmark synthesis (10 comparisons, 4 tasks)
+
+`evidence/crosstab.txt`
+
+What governs the sign-flip rate is **not** how hard the split is. It is the
+true effect divided by the wider arm's seed spread, |Δ|/sd:
+
+| bench | task | true Δ | band sd | **|Δ|/sd** | n=1 Δ range | flip% |
+|---|---|---|---|---|---|---|
+| AAV | low_vs_high | −0.0095 | 0.0496 | **0.19** | −0.140 … +0.094 | 45 |
+| GB1 | low_vs_high | −0.0078 | 0.0747 | **0.10** | −0.183 … +0.172 | 37 |
+| TAPE | stability | +0.0274 | 0.0605 | **0.45** | −0.058 … +0.241 | 23 |
+| GB1 | three_vs_rest | −0.0170 | 0.0100 | 1.70 | −0.049 … +0.004 | 6 |
+| GB1 | one_vs_rest | +0.1590 | 0.0681 | 2.34 | −0.050 … +0.389 | 2 |
+| GB1 | sampled | −0.0173 | 0.0072 | 2.42 | −0.038 … −0.011 | 0 |
+| AAV | sampled | +0.0106 | 0.0044 | 2.38 | +0.003 … +0.029 | 0 |
+| GB1 | two_vs_rest | −0.0604 | 0.0201 | 3.01 | −0.115 … −0.017 | 0 |
+| TAPE | fluorescence | −0.0494 | 0.0111 | 4.45 | −0.077 … −0.039 | 0 |
+| AAV | one_vs_many | +0.3866 | 0.0217 | 17.85 | +0.311 … +0.433 | 0 |
+
+**The threshold is about 2.** Below |Δ|/sd ≈ 2, flip rates run 6–45%. At or
+above it, 0–2%. Ten comparisons is too few to call that a law, but it is a
+clean separation and it gives authors something to act on that is cheaper
+than "run more seeds and hope":
+
+> Report your seed spread. If your claimed Δ is not at least twice the wider
+> arm's per-seed sd, one run per arm does not establish its sign.
+
+That rule is checkable from numbers a paper could print in one extra line,
+and it would have flagged BindFormer's original n=1 claim
+(Δ = −0.050 against a one-hot sd of 0.025, ratio 2.0 — right at the edge,
+and the three-seed rerun duly collapsed it to −0.021, p = 0.356).
+
+### Caveats on the synthesis
+
+- Ten comparisons, four tasks, one head architecture, frozen features only.
+  The threshold is an observation, not an established constant.
+- `band sd` uses the wider arm. The flip rate really depends on both arms'
+  spreads *and* the correlation between their predictions (GB1 `low_vs_high`
+  has the larger sd yet a lower flip rate than AAV's, because its arms
+  correlate at 0.81 against AAV's 0.48).
+- Seed here varies init and batch order only. Varying the data split too
+  would widen every band, so these are lower bounds.

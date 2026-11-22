@@ -1,0 +1,14 @@
+fluorescence.onehot.s42x10  vs  fluorescence.esm2_650m.s42x10     n_test=27217  spearman
+
+  A fluorescence.onehot.s42x10         per-seed 0.6689 +/- 0.0031  [0.6646, 0.6730]
+  B fluorescence.esm2_650m.s42x10      per-seed 0.6134 +/- 0.0111  [0.5957, 0.6256]
+
+  seed-mean predictions: 0.6788 -> 0.6294   delta -0.0494 [-0.0543, -0.0445]  p=0.0000
+  prediction correlation between arms: 0.781
+
+  the n=1 gamble: over all single-run pairings a one-seed-per-arm paper could report
+    delta ranges -0.0773 to -0.0390  (mean -0.0555, sd 0.0110)
+    0.0% of pairings favour B
+    0.0% report the OPPOSITE sign to the seed-mean result
+
+wrote evidence/comparisons_tape/fluorescence.onehot.s42x10__vs__fluorescence.esm2_650m.s42x10.json

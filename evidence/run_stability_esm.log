@@ -1,0 +1,14 @@
+stability / esm2_650m: dim=1280 train=53614 val=2512 (given) test=12851 device=mps
+  seed 42: test spearman 0.6906  (val 0.6726)  11.2s
+  seed 43: test spearman 0.6847  (val 0.6671)  10.8s
+  seed 44: test spearman 0.6050  (val 0.6635)  10.0s
+  seed 45: test spearman 0.6418  (val 0.6734)  14.5s
+  seed 46: test spearman 0.6123  (val 0.6675)  8.6s
+  seed 47: test spearman 0.6605  (val 0.6719)  8.3s
+  seed 48: test spearman 0.5836  (val 0.6711)  6.5s
+  seed 49: test spearman 0.6074  (val 0.6700)  7.0s
+  seed 50: test spearman 0.6709  (val 0.6640)  8.4s
+  seed 51: test spearman 0.6726  (val 0.6787)  16.2s
+
+esm2_650m: per-seed 0.6429 +/- 0.0382  [0.5836, 0.6906]  seed-mean-pred 0.6643
+wrote evidence/runs_tape/stability.esm2_650m.s42x10.json

@@ -1,0 +1,12 @@
+stability.onehot.s42x10  vs  stability.esm2_650m.s42x10     n_test=12851  spearman
+
+  A stability.onehot.s42x10            per-seed 0.5920 +/- 0.0605  [0.4497, 0.6420]
+  B stability.esm2_650m.s42x10         per-seed 0.6429 +/- 0.0382  [0.5836, 0.6906]
+
+  seed-mean predictions: 0.6368 -> 0.6643   delta +0.0274 [+0.0146, +0.0400]  p=0.0000
+  prediction correlation between arms: 0.424
+
+  the n=1 gamble: over all single-run pairings a one-seed-per-arm paper could report
+    delta ranges -0.0583 to +0.2408  (mean +0.0510, sd 0.0682)
+    77.0% of pairings favour B
+    23.0% report the OPPOSITE sign to the seed-mean result
