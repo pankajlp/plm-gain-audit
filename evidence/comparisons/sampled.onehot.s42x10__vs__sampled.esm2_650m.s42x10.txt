@@ -1,0 +1,12 @@
+sampled.onehot.s42x10  vs  sampled.esm2_650m.s42x10     n_test=1745  spearman
+
+  A sampled.onehot.s42x10              per-seed 0.9255 +/- 0.0020  [0.9237, 0.9306]
+  B sampled.esm2_650m.s42x10           per-seed 0.9047 +/- 0.0072  [0.8924, 0.9129]
+
+  seed-mean predictions: 0.9332 -> 0.9158   delta -0.0173 [-0.0245, -0.0104]  p=0.0000
+  prediction correlation between arms: 0.963
+
+  the n=1 gamble: over all single-run pairings a one-seed-per-arm paper could report
+    delta ranges -0.0382 to -0.0108  (mean -0.0208, sd 0.0071)
+    0.0% of pairings favour B
+    0.0% report the OPPOSITE sign to the seed-mean result

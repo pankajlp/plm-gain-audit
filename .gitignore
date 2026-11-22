@@ -1,0 +1,5 @@
+data/
+features/
+*.npz
+.venv/
+__pycache__/

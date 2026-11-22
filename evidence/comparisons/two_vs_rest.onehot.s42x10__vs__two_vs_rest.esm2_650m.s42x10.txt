@@ -1,0 +1,12 @@
+two_vs_rest.onehot.s42x10  vs  two_vs_rest.esm2_650m.s42x10     n_test=8309  spearman
+
+  A two_vs_rest.onehot.s42x10          per-seed 0.6960 +/- 0.0201  [0.6639, 0.7211]
+  B two_vs_rest.esm2_650m.s42x10       per-seed 0.6333 +/- 0.0124  [0.6066, 0.6469]
+
+  seed-mean predictions: 0.7095 -> 0.6491   delta -0.0604 [-0.0726, -0.0482]  p=0.0000
+  prediction correlation between arms: 0.747
+
+  the n=1 gamble: over all single-run pairings a one-seed-per-arm paper could report
+    delta ranges -0.1145 to -0.0171  (mean -0.0627, sd 0.0225)
+    0.0% of pairings favour B
+    0.0% report the OPPOSITE sign to the seed-mean result

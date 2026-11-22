@@ -1,0 +1,12 @@
+low_vs_high.onehot.s42x10  vs  low_vs_high.esm2_650m.s42x10     n_test=3644  spearman
+
+  A low_vs_high.onehot.s42x10          per-seed 0.4652 +/- 0.0525  [0.3534, 0.5311]
+  B low_vs_high.esm2_650m.s42x10       per-seed 0.4312 +/- 0.0747  [0.3480, 0.5253]
+
+  seed-mean predictions: 0.4883 -> 0.4805   delta -0.0078 [-0.0257, +0.0106]  p=0.4092
+  prediction correlation between arms: 0.806
+
+  the n=1 gamble: over all single-run pairings a one-seed-per-arm paper could report
+    delta ranges -0.1831 to +0.1720  (mean -0.0339, sd 0.0871)
+    37.0% of pairings favour B
+    37.0% report the OPPOSITE sign to the seed-mean result
