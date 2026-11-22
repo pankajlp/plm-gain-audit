@@ -107,4 +107,22 @@ which number sounded like a finding.
 
 ## Amendments
 
-*(none yet)*
+### Amendment 1 — 2026-11-22 — raised, then withdrawn as to its reason
+
+**Raised:** the arXiv API appeared to truncate the frame's query when the date
+range spanned multiple years — the full window reported 373 results while a
+2023-only sub-query returned 34 that seemed absent from it. The window was
+therefore queried in yearly slices and unioned.
+
+**Withdrawn:** the premise was false. It came from misreading the paging log:
+the first entry of the last descending page (2024-06-28) was taken for the
+oldest paper in the pool. The single-window query does cover the whole frame —
+the pool spans **2023-01-06 to 2026-11-19** and the yearly slices return the
+**identical 373 papers** (2023: 34, 2024: 86, 2025: 105, 2026: 148).
+
+**Effect on the scan:** none. The pool is what the frozen frame specifies.
+The slicing code is kept purely as a redundancy check, and this entry stays so
+the record shows the mistake rather than hiding it.
+
+**Pool as built:** 373 unique papers, primary categories cs.LG 178,
+q-bio.BM 93, q-bio.QM 68, cs.AI 10, cs.CL 8, q-bio.GN 6, cs.CE 4, cs.IR 1.
