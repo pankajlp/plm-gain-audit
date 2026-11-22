@@ -54,6 +54,9 @@ with FLIP's own published one-hot numbers, so the pipeline is behaving.
 1. **Frozen ESM-2 650M is worse than one-hot on four of the five GB1 splits.**
    The familiar framing — "add a PLM, get a gain" — is simply false here except
    in the extreme-extrapolation case.
+   *(Annotated 2026-11-22 after Run 2: this holds for GB1 but does NOT
+   generalise — on AAV's random split ESM-2 wins. See "What replicates, and
+   what does not" below. Left in place as the pre-AAV record.)*
 
 2. **The one place it wins, it wins decisively**: `one_vs_rest`, 28 training
    sequences, Δ = +0.159. PLM embeddings buy generalisation when there is almost
@@ -73,7 +76,7 @@ with FLIP's own published one-hot numbers, so the pipeline is behaving.
    one-run ablation gave Δ = −0.050 (p = 0.095) and three seeds gave
    −0.021 (p = 0.356).
 
-### Caveats
+### Caveats (GB1)
 
 - One benchmark, one protein, one head architecture, frozen features only. GB1
   is a 4-site combinatorial library, which is kind to one-hot on random splits.
@@ -83,3 +86,79 @@ with FLIP's own published one-hot numbers, so the pipeline is behaving.
   run-to-run variance — a paper that also reshuffles its split faces a wider
   band than the one measured here.
 - ESM-2 8M/150M arms not yet run, so "bigger PLM" is unaddressed.
+
+---
+
+## Run 2 — FLIP AAV, one-hot vs frozen ESM-2 650M, 10 seeds per arm (2026-11-22)
+
+Same protocol. AAV is 284 009 sequences of 734–750 aa, so three splits spanning
+the difficulty range were cut to a 5000/5000 train/test budget with a fixed draw
+seed (`src/subsample.py`, `data/aav/subsampled/_manifest.json`). `one_vs_many`
+keeps **all 1170** of its train rows, so the low-label regime is intact.
+Features were built once over the 23 473-sequence union. One-hot pads the
+variable lengths and drops 12 740 of 14 980 constant columns, leaving 2240
+(112 variable positions × 20).
+
+Absolute numbers will not match published FLIP figures because of the
+subsample. Within-AAV comparisons are unaffected: every arm sees the identical
+rows, and n_test = 5000 is larger than either GB1 split used above.
+
+### Seed bands
+
+`evidence/seed_bands_aav.txt`
+
+| task | arm | per-seed mean | sd | min | max | range |
+|---|---|---|---|---|---|---|
+| sampled | onehot | 0.8427 | 0.0044 | 0.8318 | 0.8464 | 0.015 |
+| sampled | esm2_650m | 0.8535 | 0.0037 | 0.8496 | 0.8604 | 0.011 |
+| low_vs_high | onehot | 0.2372 | 0.0291 | 0.1919 | 0.2851 | 0.093 |
+| low_vs_high | esm2_650m | 0.2263 | 0.0496 | 0.1446 | 0.2864 | 0.142 |
+| one_vs_many | onehot | 0.1780 | 0.0217 | 0.1477 | 0.2147 | 0.067 |
+| one_vs_many | esm2_650m | 0.5529 | 0.0185 | 0.5252 | 0.5807 | 0.056 |
+
+### Representation deltas
+
+`evidence/comparisons_aav/`
+
+| split | Δ seed-mean | CI95 | p | n=1 Δ range | % opposite sign |
+|---|---|---|---|---|---|
+| sampled | +0.0106 | [+0.001, +0.020] | 0.023 | +0.003 … +0.029 | 0% |
+| low_vs_high | −0.0095 | [−0.036, +0.018] | **0.500** | **−0.141 … +0.095** | **45%** |
+| one_vs_many | +0.3866 | [+0.361, +0.411] | <1e-4 | +0.311 … +0.433 | 0% |
+
+### What replicates, and what does not
+
+**Replicates — the central claim.** The seed band widens with extrapolation
+difficulty on an unrelated protein: sd 0.004 on the random split, 0.050 on
+`low_vs_high`, a factor of ~13. And `low_vs_high` lands in the same place it did
+on GB1: a true effect of zero (p = 0.50) with **45% of single-run pairings
+reporting the opposite sign** — against 37% on GB1. Two unrelated proteins, the
+same named split type, and in both cases a one-seed-per-arm experiment is close
+to a coin flip that still yields a reportable-looking effect size
+(up to ±0.14 here, ±0.18 on GB1).
+
+**Replicates — the low-label win.** `one_vs_many` (1170 train rows) gives
+Δ = +0.387, the largest effect anywhere in this project; GB1's `one_vs_rest`
+(28 train rows) gave +0.159. Frozen PLM embeddings buy generalisation when the
+label budget is tiny. That effect is far too large to be seed noise, and the
+n=1 range never crosses zero.
+
+**Does not replicate — "one-hot wins the easy splits."** On GB1, ESM-2 lost on
+four of five splits. On AAV's random split ESM-2 *wins*, modestly but
+significantly (+0.011, p = 0.023). So the GB1 result was specific to that
+benchmark: GB1 is a 4-site combinatorial library, which one-hot can essentially
+memorise when train and test are drawn from the same pool. The earlier framing
+("frozen ESM-2 is usually worse") was over-general and is withdrawn — AAV
+corrects it.
+
+The claim that survives both benchmarks is narrower and is the one the project
+is about: **the magnitude and often the sign of a reported PLM gain is not
+identifiable from one run per arm, and the problem is worst on the designed
+splits papers lead with.**
+
+### Caveats (AAV)
+
+- Subsampled, so not comparable to published AAV leaderboards.
+- Three of seven splits. `des_mut` / `mut_des` (the designed-vs-mutant
+  direction pair) are untouched and would be the interesting next cut.
+- Still one head architecture and frozen features on both benchmarks.
