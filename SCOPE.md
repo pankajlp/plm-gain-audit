@@ -52,11 +52,11 @@ PLM-A-vs-PLM-B ablation on a *public* benchmark. For each, record:
 Primary outcome: the distribution of `seeds per arm`, and the share of claimed
 Δ smaller than the seed-noise band we measure in Part B for the same benchmark.
 
-Sampling frame must be pre-registered in this file before screening starts, so
-the scan cannot be steered. Draft frame: arXiv + bioRxiv, query on
-(ESM-2 | ProtT5 | ProtBERT) × (ablation | one-hot | baseline representation),
-primary q-bio.BM/q-bio.QM, screen in reverse-chronological order to a fixed n
-(target n = 40).
+Sampling frame is **frozen in `FRAME.md`** (2026-11-22, written before the
+candidate pool was built): arXiv API, 2023-01-01 to 2026-11-22, categories
+q-bio.BM / q-bio.QM / cs.LG, title-or-abstract match on PLM names, screened
+most-recent-first to n = 40 with logged exclusion codes, and pre-committed
+interpretation thresholds. The draft frame that stood here is superseded by it.
 
 ### Part B — measure the band (runnable locally)
 
