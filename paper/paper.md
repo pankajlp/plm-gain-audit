@@ -4,6 +4,8 @@ author:
   - "AUTHOR NAME  <!-- fill in -->"
   - "Independent researcher  <!-- affiliation: see note at end -->"
 date: 2026-11-23
+bibliography: references.bib
+link-citations: true
 keywords:
   - protein language models
   - reproducibility
@@ -59,7 +61,8 @@ the cross-benchmark regularity, and a threshold cheap enough to adopt.
 
 This project began with a result that did not survive.
 
-In earlier work on protein-binding affinity we ran an ablation: remove a
+In earlier work on protein-binding affinity [@bindformer] we ran an ablation:
+remove a
 component, see what happens. One training run per arm gave a Spearman delta of
 **-0.050 with p = 0.095** — the shape of a finding, a near-miss on conventional
 significance, the kind of number that becomes a sentence in a paper. Re-running
@@ -118,13 +121,22 @@ limits the paper's reach:
 
 **Seed variance in machine learning generally.** That reported gains can be
 swamped by initialisation and data-order noise is long established outside
-biology, and the standard remedies — report distributions, use paired tests,
-state the number of runs — are well known. We take that literature as given and
-do not restate it.
+biology [@reimers2017distributions; @henderson2018matters; @melis2018state;
+@dodge2020finetuning; @bouthillier2021variance], and the standard remedies —
+report distributions, use paired tests, state the number of runs — are well
+known; @bouthillier2021variance in particular sets out how to budget
+repetitions across variance sources, and @picard2021seed makes the point
+uncomfortably concrete. We take that literature as given and do not restate
+it. What is specific to our setting is that the protein-ML ablation table has
+not inherited those remedies, and that the effects at stake are often smaller
+than the band.
 
-**Protein-ML benchmarking.** FLIP introduced designed splits of increasing
-extrapolation difficulty for protein fitness prediction, and TAPE assembled
-standard supervised tasks with fixed splits. Both are widely used as the
+**Protein-ML benchmarking.** FLIP [@dallago2021flip] introduced designed splits
+of increasing extrapolation difficulty for protein fitness prediction, and TAPE
+[@rao2019tape] assembled standard supervised tasks with fixed splits.
+ProteinGym [@notin2023proteingym] plays the same role for zero-shot
+variant-effect prediction, and the representations under test are usually ESM-2
+[@lin2023esm2] or the ProtTrans family [@elnaggar2020prottrans]. Both are widely used as the
 substrate for exactly the ablation tables we study. Neither prescribes a number
 of training repetitions, and in practice the published leaderboards are
 single-number-per-cell.
@@ -134,7 +146,7 @@ related work, and it is substantial. Five of the 40 papers in our own included
 set measure run-to-run variance on their own benchmarks and reach our
 conclusion:
 
-- **DegradoMap** (arXiv:2606.04021) ran three seeds and obtained AUROC 0.646
+- **DegradoMap** [@cheng2026degradomap] ran three seeds and obtained AUROC 0.646
   against a gradient-boosting baseline of 0.607. They then ran three more. The
   six-seed mean fell to **0.603 +/- 0.097 — below the baseline** (bootstrap
   p = 0.556). Individual seeds span **0.502 to 0.745**. The authors write that
@@ -143,27 +155,28 @@ conclusion:
   that "the best seed (0.7449, +23% over GB) reflects favorable initialization".
   A one-seed-per-arm paper on that setup could have reported anything from
   -0.11 to +0.14 against the same baseline.
-- **PIT-GCL** (arXiv:2610.04850) computes our ratio independently: its margins
+- **PIT-GCL** [@choi2026pitgcl] computes our ratio independently: its margins
   are "between 6.4 and 9.6 times the combined standard deviation of the two
   methods". It also states, per benchmark, what a seed varies — on one of them
   the seed redraws the whole data partition, so the spread covers split,
   initialisation and negative sampling together.
-- **ProTok** (arXiv:2610.18481) reruns its validation-selected configuration at
+- **ProTok** [@hardy2026protok] reruns its validation-selected configuration at
   five named seeds and prints the five-seed mean beside the single-run headline
   from its main table. On one task the headline reads 85.79 against a five-seed
   mean of 86.8 +/- 0.2 — the published number sits roughly five seed-standard-
   deviations below its own mean, while the gap to the best baseline is 2.6.
-- **HyPLM** (arXiv:2611.12000) excludes FLIP GB1 two-vs-rest, three-vs-rest and
+- **HyPLM** [@lin2026hyplm] excludes FLIP GB1 two-vs-rest, three-vs-rest and
   a FLIP2 split from every summary statistic because "numerically equivalent
   runs of the same model differ by up to 0.2". This independently corroborates
   the GB1 instability we measure in Section 4.
-- **arXiv:2608.12090** wires seed disagreement into its released tool: if the
+- **Joeres et al.** [@joeres2026task] wire seed disagreement into its released tool: if the
   five seeds disagree strongly about which layer is best, the user is notified
   and more repetitions are requested. Seed variance as a signal rather than an
   error bar.
 
 Two further papers, excluded from our set on scope grounds, belong here.
-**ORBIT-FMIB** (arXiv:2610.00672) and arXiv:2611.09046 retrain a
+**ORBIT-FMIB** [@rahimimovassagh2026orbit] and its companion audit
+[@rahimimovassagh2026critics] retrain a
 31-layer x 15-subset x 3-seed grid (1,395 fits) from scratch and conclude the
 two runs produced genuinely different trained models, not noisy re-evaluations
 of one. They also report **a V100 and an H100 returning different scores for
@@ -192,7 +205,8 @@ amendments, each recorded before the decisions it governs.
 
 **Query.** Submissions from 2023-01-01 to 2026-11-22 in q-bio.BM, q-bio.QM or
 cs.LG, matching any of: `ESM-2`, `ESM2`, `ESM-1b`, `ProtT5`, `ProtBERT`,
-`protein language model(s)`. This returned **373 unique papers**.
+`protein language model(s)` — the model families of @lin2023esm2 and
+@elnaggar2020prottrans. This returned **373 unique papers**.
 
 **Screening.** Candidates sorted most-recent-first and screened in that order
 until **40 were included**. No skipping, no substitution; every exclusion
@@ -219,7 +233,8 @@ the freedom to decide afterwards which number sounded like a finding.
 paper's seed count be confirmed against the matched passage; a regex hit never
 sets the value. This was not a formality. Two examples from the screened set
 show why: one paper's "three seeds" are **alphabet-relabeling seeds** in a
-contact-prediction diagnostic, not training seeds; another's "10 folds x 3
+contact-prediction diagnostic [@batra2026relabeling], not training seeds;
+another's [@kang2026kinecouple] "10 folds x 3
 random seeds" belongs to an ablation over readout architecture, where the
 representation is held fixed in every arm and the comparison our criteria ask
 about does not exist. An automated pass would have credited both.
@@ -334,20 +349,23 @@ Four of the included papers say this themselves, in their own limitations:
 > "the bootstrap intervals we report for our tokenizer comparison and ablations
 > capture variability over evaluation queries, not variability across
 > independent training runs. Due to limited compute, the full-scale models were
-> trained with a single seed." — arXiv:2609.37675
+> trained with a single seed."
+> --- LEMON-ZEST [@banerjee2026lemonzest]
 
 > "the leading PLM rows overlap under this single-run prediction resampling
 > view" ... "Repeated-seed gaps keep the results at the level of endpoint
 > test-set evidence rather than statistical-significance claims."
-> — arXiv:2607.25518
+> --- AMPBench-MT [@zhou2026ampbench]
 
 > "stability of individual weights across training splits and pairing seeds
 > remain untested here; bootstrap-seed stability addresses a different
-> question." — arXiv:2610.00988
+> question."
+> --- the cryptic-pocket counting field [@yu2026auditable]
 
 > "we limited our training runs above to a single seed per model, which reduces
 > our confidence about the statistical significance of differences between
-> models" — arXiv:2610.26651
+> models"
+> --- the pretraining-filtering study [@maiwald2026filtering]
 
 This is the result we consider most worth publishing. The diagnosis is not
 ignorance. It is a compute constraint that the field has learned to describe
@@ -365,7 +383,8 @@ cannot be made for any of them:
   precisely the instability Part B quantifies. The non-answer is the answer.
 - Two papers use GB1 for quantization or closed-loop search objectives rather
   than a representation swap on the FLIP split, so our band does not apply.
-- Three use TAPE or ProteinGym-style suites whose metrics and splits do not line
+- Three use TAPE [@rao2019tape] or ProteinGym-style [@notin2023proteingym]
+  suites whose metrics and splits do not line
   up with the arms we measured.
 
 Applying the threshold to published deltas needs **per-seed predictions**, which
@@ -382,7 +401,8 @@ The aim is to isolate the cheapest, most defensible slice of run-to-run
 variance and measure it well, rather than to estimate total variance badly.
 
 **Representations.** Two arms: amino-acid one-hot, and mean-pooled frozen
-ESM-2 650M (`facebook/esm2_t33_650M_UR50D`) over non-special tokens. Frozen
+ESM-2 650M [@lin2023esm2] (`facebook/esm2_t33_650M_UR50D`) over non-special
+tokens. Frozen
 features mean 10 seeds costs minutes, not days, which is what makes a 10x10
 grid affordable at all.
 
@@ -396,11 +416,13 @@ taken from the benchmark's own shipped validation rows — one fewer arbitrary
 choice). Consequently **every band we report is a lower bound** on the variance
 a paper faces if it also reshuffles its split.
 
-**Tasks.** FLIP GB1 (8,733 sequences, 265 aa, five official splits); FLIP AAV
+**Tasks.** All four are public. FLIP [@dallago2021flip] GB1 (8,733 sequences,
+265 aa, five official splits); FLIP AAV
 (284,009 sequences of 734-750 aa, three splits spanning the difficulty range,
 subsampled to a 5,000/5,000 budget with a fixed draw seed, with `one_vs_many`
 keeping all 1,170 training rows so the low-label regime is intact); TAPE
-fluorescence (54,025 sequences) and TAPE stability (68,977), both at full size.
+fluorescence (54,025 sequences) and TAPE stability (68,977) [@rao2019tape],
+both at full size.
 
 **Statistics.** Paired bootstrap, 10,000 resamples, on seed-mean predictions
 over the same test items; arms with differing test indices are refused by the
@@ -507,6 +529,30 @@ than either margin suggests. A paper using the wider arm's sd, as we do, is
 therefore being conservative in the right direction — it will over-estimate the
 noise when the arms are correlated, and that is the safe way to be wrong.
 
+## 4.7 Two published points on the same curve
+
+Two papers from the Part A set happen to report enough to be placed on this
+curve, one at each end, which is some evidence the regularity is not an
+artifact of our setup.
+
+**RipplePLM** [@lv2026ripple] reports low-N fitness regression over five runs.
+On Spike-ACE2, frozen ESM-2 scores 0.331 +/- 0.041 against a ridge baseline at
+0.335 +/- 0.052 — a gap of 0.004 against standard deviations an order of
+magnitude larger, so |d|/sd is about 0.08, deep in the coin-flip regime. The
+same two representations differ by 0.256 on avGFP. One pair of
+representations, two assays, opposite verdicts, legible only because the
+authors ran five seeds.
+
+**CliffRank** [@li2026cliffrank] reports five aligned seeds across handcrafted,
+ECFP, MACCS and two ESM-2 scales. On E. coli activity-cliff ranking the non-PLM
+MACCS encoders beat both ESM-2 scales by roughly 0.18 Spearman against standard
+deviations of 0.005-0.03 — a high ratio, where one run per arm would have
+reached the same verdict.
+
+The threshold cuts both ways, which is the point. It is not an argument that
+published PLM results are generally unsafe; it is a test for telling which
+ones are.
+
 ---
 
 # 5. Putting the two parts together
@@ -560,17 +606,17 @@ Why this and not "run more seeds":
 
 Three practices from the included set are worth copying directly. One states
 seed counts per analysis in a reproducibility table and reports **all five
-paired gains individually** rather than only their mean (arXiv:2608.10595).
+paired gains individually** rather than only their mean [@xu2026degradequery].
 One uses the **seed-averaged** metric as the paired unit for its significance
-tests across 60 representation-regressor combinations (arXiv:2608.30175). One
+tests across 60 representation-regressor combinations [@tian2026peptide]. One
 prints the delta and the across-seed sigma side by side — "improves Spearman on
-S669 from 0.486 to 0.540 (sigma = 0.002 across seeds)" (arXiv:2606.08100).
+S669 from 0.486 to 0.540 (sigma = 0.002 across seeds)" [@shivram2026constraint].
 
 And one practice is worth asking for beyond our own rule: **release per-seed
 test predictions.** It costs almost nothing, it makes paired tests possible for
 readers, and its absence is why our secondary outcome could not be computed. One
 included paper declines to claim significance explicitly because "paired
-per-seed predictions are not available for all baselines" (arXiv:2609.22184) —
+per-seed predictions are not available for all baselines" [@kong2026dptmdt] —
 which is the right instinct and also a description of the problem.
 
 ---
@@ -646,6 +692,11 @@ be the default rather than the exception.
 
 ---
 
+# References
+
+::: {#refs}
+:::
+
 # Reproducibility
 
 All code, logs and per-seed outputs are in the project repository.
@@ -686,9 +737,20 @@ Open items before this goes anywhere:
 3. CATEGORY: cs.LG is the natural primary, with q-bio.QM cross-list. Note that
    q-bio.BM endorsement is still outstanding from the BindFormer submission;
    cs.LG may avoid that blocker, but check before relying on it.
-4. The five papers in Section 2 that already measured this deserve real
-   citations with full bibliographic entries, not just arXiv ids. Same for
-   FLIP, TAPE and ESM-2.
+4. CITATIONS are done — 31 entries in `paper/references.bib`, rendering under
+   `pandoc --citeproc`. Author lists for the 27 arXiv entries come from the
+   arXiv API via `src/fetch_refs.py`, not from memory, and are regenerated by
+   `src/make_bib.py`. The four non-arXiv entries (ESM-2, FLIP, ProteinGym and
+   this project's own prior work) were checked by hand. Two still carry a TODO
+   inside the .bib:
+   - `dallago2021flip` cites the bioRxiv preprint. FLIP was presented at
+     NeurIPS 2021 but I could not confirm from public listings whether to cite
+     the Datasets and Benchmarks track proceedings version; check the
+     proceedings page and switch if so.
+   - `bindformer` is a placeholder for our own prior work, cited in Sections
+     1.1 and 5. It is unpublished and its q-bio.BM endorsement is outstanding,
+     so decide how to cite it (preprint, "in preparation", or a repository
+     link) before posting.
 5. Consider whether to contact the DegradoMap authors before posting. Their
    result is the strongest corroboration in the paper and they reached it
    independently; a heads-up is courteous and may surface context.

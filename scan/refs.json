@@ -1,0 +1,440 @@
+[
+  {
+    "arxiv_id": "2606.04021v1",
+    "base_id": "2606.04021",
+    "title": "Structure-Aware Prediction of PROTAC-Mediated Protein Degradability via Graph Neural Networks",
+    "authors": [
+      "Bryan Cheng",
+      "Austin Jin"
+    ],
+    "published": "2026-06-01T09:39:22Z",
+    "primary_category": "q-bio.QM",
+    "journal_ref": "",
+    "doi": ""
+  },
+  {
+    "arxiv_id": "1707.09861v1",
+    "base_id": "1707.09861",
+    "title": "Reporting Score Distributions Makes a Difference: Performance Study of LSTM-networks for Sequence Tagging",
+    "authors": [
+      "Nils Reimers",
+      "Iryna Gurevych"
+    ],
+    "published": "2017-07-31T14:25:24Z",
+    "primary_category": "cs.CL",
+    "journal_ref": "",
+    "doi": ""
+  },
+  {
+    "arxiv_id": "2610.18481v1",
+    "base_id": "2610.18481",
+    "title": "ProTok: Unified Protein Tokenization via Modular Multi-Codebook Quantization",
+    "authors": [
+      "Romain Hardy",
+      "Xiaoman Zhang",
+      "Pranav Rajpurkar"
+    ],
+    "published": "2026-10-13T14:43:03Z",
+    "primary_category": "cs.LG",
+    "journal_ref": "",
+    "doi": ""
+  },
+  {
+    "arxiv_id": "2610.00672v2",
+    "base_id": "2610.00672",
+    "title": "ORBIT-FMIB: Tracking Order-Resolved Epistatic Information Through ESM-2",
+    "authors": [
+      "Maryam Rahimimovassagh",
+      "Waldemar Karwowski",
+      "Ivan Garibay",
+      "Niloofar Yousefi"
+    ],
+    "published": "2026-09-30T20:09:32Z",
+    "primary_category": "cs.LG",
+    "journal_ref": "",
+    "doi": ""
+  },
+  {
+    "arxiv_id": "2611.09046v1",
+    "base_id": "2611.09046",
+    "title": "When Can You Trust Neural Critics? Auditing Mutual Information Estimates of Higher-Order Epistasis in Protein Language Models",
+    "authors": [
+      "Maryam Rahimimovassagh",
+      "Waldemar Karwowski",
+      "Niloofar Yousefi"
+    ],
+    "published": "2026-11-06T06:20:28Z",
+    "primary_category": "cs.LG",
+    "journal_ref": "",
+    "doi": ""
+  },
+  {
+    "arxiv_id": "2611.09377v2",
+    "base_id": "2611.09377",
+    "title": "KineCouple: Substrate-conditioned residual readout for enzyme kinetic prediction",
+    "authors": [
+      "Chun Kang",
+      "Yunbo Zhang",
+      "Fanhu Zeng",
+      "Jian Liu",
+      "Siwei Deng",
+      "Lei Sha"
+    ],
+    "published": "2026-11-06T12:17:54Z",
+    "primary_category": "cs.AI",
+    "journal_ref": "",
+    "doi": ""
+  },
+  {
+    "arxiv_id": "2610.26651v2",
+    "base_id": "2610.26651",
+    "title": "The Effectiveness and Durability of Pretraining Data Filtering in Protein Language Models",
+    "authors": [
+      "Aaron Maiwald",
+      "Roderick McNeill",
+      "Jaeyoung Lee",
+      "Matthew A. Clarke",
+      "Lennart Justen",
+      "Alejandro Acelas",
+      "Ivo Andrews",
+      "Giles Harper-Donnelly",
+      "Adam Moore",
+      "Sophie Rose",
+      "Oliver M. Crook",
+      "Felix Jackson"
+    ],
+    "published": "2026-10-19T16:08:59Z",
+    "primary_category": "cs.LG",
+    "journal_ref": "",
+    "doi": ""
+  },
+  {
+    "arxiv_id": "2607.25518v1",
+    "base_id": "2607.25518",
+    "title": "AMPBench-MT: A Homology-Controlled Benchmark for Antimicrobial Peptide Potency, Spectrum, and Safety Prediction",
+    "authors": [
+      "Ziheng Zhou",
+      "Huiyu Luo",
+      "Xiaohu Zhu",
+      "Nan Wang",
+      "Xuebiao Qin",
+      "Chaoyan Zhang",
+      "Jun Yan"
+    ],
+    "published": "2026-07-28T10:01:30Z",
+    "primary_category": "cs.LG",
+    "journal_ref": "",
+    "doi": ""
+  },
+  {
+    "arxiv_id": "2610.01891v2",
+    "base_id": "2610.01891",
+    "title": "RipplePLM: Structural and Property Decoupling for Protein Mutation Effect Generation",
+    "authors": [
+      "Liuzhenghao Lv",
+      "Yuyang Liu",
+      "Yuyang Gao",
+      "Li Yuan",
+      "Yonghong Tian"
+    ],
+    "published": "2026-10-01T15:41:24Z",
+    "primary_category": "cs.CE",
+    "journal_ref": "",
+    "doi": ""
+  },
+  {
+    "arxiv_id": "2608.12090v4",
+    "base_id": "2608.12090",
+    "title": "Task- and dataset-specific information in protein language models",
+    "authors": [
+      "Roman Joeres",
+      "Ilya Senatorov",
+      "Anastasia Kolchina",
+      "Dietrich Klakow",
+      "Olga V. Kalinina"
+    ],
+    "published": "2026-08-12T14:13:48Z",
+    "primary_category": "cs.LG",
+    "journal_ref": "",
+    "doi": ""
+  },
+  {
+    "arxiv_id": "2610.04850v3",
+    "base_id": "2610.04850",
+    "title": "PIT-GCL: Protein Interaction using Topological Graph Contrastive Learning",
+    "authors": [
+      "Jae Won Choi",
+      "Ryoonki Hong",
+      "Alan Liang",
+      "Manjula Adiveppa Wader",
+      "Bingsong Zeng",
+      "Peiyang Tang",
+      "Longwei Liu",
+      "Ruishan Liu"
+    ],
+    "published": "2026-10-04T01:30:42Z",
+    "primary_category": "cs.LG",
+    "journal_ref": "",
+    "doi": ""
+  },
+  {
+    "arxiv_id": "2609.37675v2",
+    "base_id": "2609.37675",
+    "title": "LEMON-ZEST: Evolution-Informed Tokenization for Efficient Protein Language Modeling",
+    "authors": [
+      "Biswajit Banerjee",
+      "Claudia Alvarez Carreno",
+      "Anton S. Petrov"
+    ],
+    "published": "2026-09-29T14:27:24Z",
+    "primary_category": "cs.LG",
+    "journal_ref": "",
+    "doi": ""
+  },
+  {
+    "arxiv_id": "2611.16881v1",
+    "base_id": "2611.16881",
+    "title": "Protein Language Models Fail To Capture Contact Predictions Under Invariant Relabeling",
+    "authors": [
+      "Paarth Batra",
+      "Aryan Keluskar"
+    ],
+    "published": "2026-11-12T14:45:07Z",
+    "primary_category": "q-bio.QM",
+    "journal_ref": "",
+    "doi": ""
+  },
+  {
+    "arxiv_id": "1906.08230v1",
+    "base_id": "1906.08230",
+    "title": "Evaluating Protein Transfer Learning with TAPE",
+    "authors": [
+      "Roshan Rao",
+      "Nicholas Bhattacharya",
+      "Neil Thomas",
+      "Yan Duan",
+      "Xi Chen",
+      "John Canny",
+      "Pieter Abbeel",
+      "Yun S. Song"
+    ],
+    "published": "2019-06-19T17:19:31Z",
+    "primary_category": "cs.LG",
+    "journal_ref": "",
+    "doi": ""
+  },
+  {
+    "arxiv_id": "1709.06560v3",
+    "base_id": "1709.06560",
+    "title": "Deep Reinforcement Learning that Matters",
+    "authors": [
+      "Peter Henderson",
+      "Riashat Islam",
+      "Philip Bachman",
+      "Joelle Pineau",
+      "Doina Precup",
+      "David Meger"
+    ],
+    "published": "2017-09-19T06:09:47Z",
+    "primary_category": "cs.LG",
+    "journal_ref": "",
+    "doi": ""
+  },
+  {
+    "arxiv_id": "2608.10595v1",
+    "base_id": "2608.10595",
+    "title": "DegradeQuery: Counterfactual Tuple Pretraining for Context-Aware PROTAC Degradation Prediction",
+    "authors": [
+      "Dong Xu",
+      "Zhangfan Yang",
+      "Jiantao Wu",
+      "Zexuan Zhu",
+      "Jianqiang Li",
+      "Junkai Ji"
+    ],
+    "published": "2026-08-11T07:25:41Z",
+    "primary_category": "q-bio.BM",
+    "journal_ref": "",
+    "doi": ""
+  },
+  {
+    "arxiv_id": "2606.08100v1",
+    "base_id": "2606.08100",
+    "title": "Constraint-Aware Optimization for Robust Protein Stability Prediction",
+    "authors": [
+      "A Shivram",
+      "Aneesh S. Chivukula",
+      "Manik Gupta",
+      "Sourav Chowdhury"
+    ],
+    "published": "2026-06-06T11:04:52Z",
+    "primary_category": "cs.LG",
+    "journal_ref": "",
+    "doi": ""
+  },
+  {
+    "arxiv_id": "2608.30175v1",
+    "base_id": "2608.30175",
+    "title": "Benchmarking Peptide-Protein Affinity Prediction Across Peptide and Target Shifts",
+    "authors": [
+      "Jiaxin Tian",
+      "Darren An",
+      "Jun Li"
+    ],
+    "published": "2026-08-31T02:56:26Z",
+    "primary_category": "cs.LG",
+    "journal_ref": "",
+    "doi": ""
+  },
+  {
+    "arxiv_id": "2002.06305v1",
+    "base_id": "2002.06305",
+    "title": "Fine-Tuning Pretrained Language Models: Weight Initializations, Data Orders, and Early Stopping",
+    "authors": [
+      "Jesse Dodge",
+      "Gabriel Ilharco",
+      "Roy Schwartz",
+      "Ali Farhadi",
+      "Hannaneh Hajishirzi",
+      "Noah Smith"
+    ],
+    "published": "2020-02-15T02:40:10Z",
+    "primary_category": "cs.CL",
+    "journal_ref": "",
+    "doi": ""
+  },
+  {
+    "arxiv_id": "2007.06225v3",
+    "base_id": "2007.06225",
+    "title": "ProtTrans: Towards Cracking the Language of Life's Code Through Self-Supervised Deep Learning and High Performance Computing",
+    "authors": [
+      "Ahmed Elnaggar",
+      "Michael Heinzinger",
+      "Christian Dallago",
+      "Ghalia Rihawi",
+      "Yu Wang",
+      "Llion Jones",
+      "Tom Gibbs",
+      "Tamas Feher",
+      "Christoph Angerer",
+      "Martin Steinegger",
+      "Debsindhu Bhowmik",
+      "Burkhard Rost"
+    ],
+    "published": "2020-07-13T07:54:20Z",
+    "primary_category": "cs.LG",
+    "journal_ref": "",
+    "doi": ""
+  },
+  {
+    "arxiv_id": "2103.03098v1",
+    "base_id": "2103.03098",
+    "title": "Accounting for Variance in Machine Learning Benchmarks",
+    "authors": [
+      "Xavier Bouthillier",
+      "Pierre Delaunay",
+      "Mirko Bronzi",
+      "Assya Trofimov",
+      "Brennan Nichyporuk",
+      "Justin Szeto",
+      "Naz Sepah",
+      "Edward Raff",
+      "Kanika Madan",
+      "Vikram Voleti",
+      "Samira Ebrahimi Kahou",
+      "Vincent Michalski",
+      "Dmitriy Serdyuk",
+      "Tal Arbel",
+      "Chris Pal",
+      "Ga\u00ebl Varoquaux",
+      "Pascal Vincent"
+    ],
+    "published": "2021-03-01T22:39:49Z",
+    "primary_category": "cs.LG",
+    "journal_ref": "",
+    "doi": ""
+  },
+  {
+    "arxiv_id": "2609.01673v1",
+    "base_id": "2609.01673",
+    "title": "CliffRank: A Dual-Branch Framework for Activity-Cliff Ranking Prediction",
+    "authors": [
+      "Kewei Li",
+      "Rongying Zhang",
+      "Peiyu Yang",
+      "Zhongjian Wang",
+      "Qiuchen Zhao",
+      "Lan Huang",
+      "Fengfeng Zhou"
+    ],
+    "published": "2026-09-01T07:57:56Z",
+    "primary_category": "cs.LG",
+    "journal_ref": "",
+    "doi": ""
+  },
+  {
+    "arxiv_id": "2609.22184v1",
+    "base_id": "2609.22184",
+    "title": "DPTM-DT: Dual-Pretrained Transformer Multitask Representation Learning for Drug-Target Prediction",
+    "authors": [
+      "Ge Kong"
+    ],
+    "published": "2026-08-28T03:44:30Z",
+    "primary_category": "cs.LG",
+    "journal_ref": "",
+    "doi": ""
+  },
+  {
+    "arxiv_id": "2610.00988v1",
+    "base_id": "2610.00988",
+    "title": "Auditable Algebraic Counting Field for Cryptic-Pocket Detection from Apo Structures",
+    "authors": [
+      "Shan Yu",
+      "Xuening Wu"
+    ],
+    "published": "2026-10-01T03:22:43Z",
+    "primary_category": "cs.LG",
+    "journal_ref": "",
+    "doi": ""
+  },
+  {
+    "arxiv_id": "2611.12000v1",
+    "base_id": "2611.12000",
+    "title": "HyPLM Technical Report",
+    "authors": [
+      "Haowei Lin",
+      "Cai Zhou",
+      "Xiangxin Zhou"
+    ],
+    "published": "2026-11-09T07:37:34Z",
+    "primary_category": "cs.LG",
+    "journal_ref": "",
+    "doi": ""
+  },
+  {
+    "arxiv_id": "2109.08203v2",
+    "base_id": "2109.08203",
+    "title": "Torch.manual_seed(3407) is all you need: On the influence of random seeds in deep learning architectures for computer vision",
+    "authors": [
+      "David Picard"
+    ],
+    "published": "2021-09-16T20:10:12Z",
+    "primary_category": "cs.CV",
+    "journal_ref": "",
+    "doi": ""
+  },
+  {
+    "arxiv_id": "1707.05589v2",
+    "base_id": "1707.05589",
+    "title": "On the State of the Art of Evaluation in Neural Language Models",
+    "authors": [
+      "G\u00e1bor Melis",
+      "Chris Dyer",
+      "Phil Blunsom"
+    ],
+    "published": "2017-07-18T12:35:53Z",
+    "primary_category": "cs.CL",
+    "journal_ref": "",
+    "doi": ""
+  }
+]
