@@ -1,0 +1,7 @@
+% Build-time LaTeX tweaks for the pandoc PDF. Nothing here changes the text.
+\usepackage{etoolbox}
+% The crosstab in Section 4 is nine columns wide; longtable does not shrink to
+% fit, so every table is set a size down. Without this the main table overruns
+% the right margin by ~27pt.
+\AtBeginEnvironment{longtable}{\footnotesize}
+\usepackage{microtype}

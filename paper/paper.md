@@ -1,8 +1,6 @@
 ---
 title: "Report your seed spread: how much of a published protein-language-model gain is identifiable from one run per arm?"
-author:
-  - "Pankaj Kumar"
-  - "Independent researcher"
+author: "Pankaj Kumar^[Independent researcher]"
 date: 2026-11-23
 bibliography: references.bib
 link-citations: true
@@ -459,7 +457,7 @@ wider arm's per-seed standard deviation. "flip%" is the share of the 100
 single-run pairings whose sign disagrees with the 10-seed result.
 
 | bench | task | n_test | true delta | p | band sd | **\|d\|/sd** | n=1 delta range | flip% |
-|---|---|---|---|---|---|---|---|---|
+|-----|--------------|-------|---------|------|--------|---------|-------------------|------|
 | AAV | low_vs_high | 5,000 | -0.0095 | 0.500 | 0.0496 | **0.19** | -0.140 .. +0.094 | **45** |
 | GB1 | low_vs_high | 3,644 | -0.0078 | 0.409 | 0.0747 | **0.10** | -0.183 .. +0.172 | **37** |
 | TAPE | stability | 12,851 | +0.0274 | <1e-4 | 0.0605 | **0.45** | -0.058 .. +0.241 | **23** |
@@ -730,9 +728,9 @@ python src/scan_tally.py --decisions scan/decisions.jsonl
 
 ---
 
+<!--
 # Notes for submission
 
-<!--
 Open items before this goes anywhere:
 
 1. AUTHOR AND AFFILIATION are filled in: Pankaj Kumar, independent

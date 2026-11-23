@@ -3,3 +3,4 @@ features/
 *.npz
 .venv/
 __pycache__/
+paper/paper.pdf
