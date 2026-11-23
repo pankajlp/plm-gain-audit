@@ -146,10 +146,12 @@ related work, and it is substantial. Five of the 40 papers in our own included
 set measure run-to-run variance on their own benchmarks and reach our
 conclusion:
 
-- **DegradoMap** [@cheng2026degradomap] ran three seeds and obtained AUROC 0.646
-  against a gradient-boosting baseline of 0.607. They then ran three more. The
-  six-seed mean fell to **0.603 +/- 0.097 — below the baseline** (bootstrap
-  p = 0.556). Individual seeds span **0.502 to 0.745**. The authors write that
+- **DegradoMap** [@cheng2026degradomap] ran three seeds and obtained AUROC
+  0.646 +/- 0.124 against a gradient-boosting baseline of 0.607. They then ran
+  three more — 0.657, 0.520 and 0.502. The six-seed mean fell to
+  **0.603 +/- 0.097 — below the baseline** (p = 0.556; the paper reports the
+  p-value without naming the test). Individual seeds span **0.502 to 0.745**.
+  The authors write that
   "individual seeds span 0.25 AUROC and may underperform simple baselines",
   that "ensembling across >= 6 seeds is required for reliable deployment", and
   that "the best seed (0.7449, +23% over GB) reflects favorable initialization".

@@ -52,6 +52,8 @@ YEAR_OVERRIDE = {
 
 # venues the arXiv API does not carry; checked against publisher records
 VENUE = {
+    # named in the paper's own ACM template metadata, not in the arXiv record
+    "2606.04021": "ACM-BCB '26: 17th ACM Conference on Bioinformatics, Computational Biology, and Health Informatics, Calabria, Italy",
     "1906.08230": "Advances in Neural Information Processing Systems 32 (NeurIPS 2019)",
     "2103.03098": "Proceedings of Machine Learning and Systems 3 (MLSys 2021)",
     "1707.09861": "Proceedings of EMNLP 2017",

@@ -93,7 +93,8 @@ and not an artifact of our setup.
 - **DegradoMap** (2606.04021) is the clearest case in the literature. Three
   seeds gave AUROC 0.646 against a gradient-boosting baseline of 0.607. The
   authors ran three more seeds; the six-seed mean fell to **0.603 ± 0.097 —
-  below the baseline** (bootstrap p = 0.556). Individual seeds span **0.502 to
+  below the baseline** (p = 0.556; the paper gives the p-value without naming
+  the test). Individual seeds span **0.502 to
   0.745**, and they write that "the best seed (0.7449, +23% over GB) reflects
   favorable initialization" and that ensembling over ≥6 seeds "is required for
   reliable deployment". A one-seed paper here could have reported anything from
