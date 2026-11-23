@@ -30,6 +30,8 @@ with FLIP's own published one-hot numbers, so the pipeline is behaving.
 | one_vs_rest | esm2_650m | 0.2096 | 0.0666 | 0.0947 | 0.3327 | 0.238 |
 
 **The seed band widens by a factor of ~35 from the easiest split to the hardest**
+*(Annotated 2026-11-23 while writing the paper: 0.0747/0.0020 is 37.4, not ~35.
+The manuscript uses 37. Left in place as the original record.)*
 (sd 0.002 → 0.075). On `one_vs_rest` the one-hot arm's own Spearman ranges from
 −0.056 to +0.145 across seeds: the same features and the same data give either
 "no signal" or "a modest positive", depending on nothing but the seed.
