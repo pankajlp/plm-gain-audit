@@ -188,3 +188,28 @@ ensemble paper, or vice versa) would have been plainly inconsistent.
 no pre-committed threshold changes. The write-up reports how many included
 papers entered under this reading, so the headline figure can be recomputed
 without them.
+
+### Amendment 4 — 2026-11-23 — same-work duplicates
+
+**The gap.** The pool is de-duplicated by arXiv base id, which does not catch
+the same work submitted twice under different ids. Two entries are the same
+FLaG module from the same lab, releasing the same code at
+`github.com/Kewei2023/AMPCliff/tree/FLaG`, with the same AMP + CIFAR + text
+experiments at 10 aligned seeds: **2609.00831** (#41, 2026-09-01) and
+**2606.08191** (#69, 2026-06-06). Counting both would enter one reporting
+practice into the primary outcome twice.
+
+**Rule.** When two pool entries report substantially the same experiments by
+the same authors, the one reached first in screening order (the more recent, per
+the frozen most-recent-first order) is screened normally and the other is
+excluded as **E6_duplicate**, with the pair recorded. The rule is mechanical —
+screening order decides, not which version looks better.
+
+**Direction check and disclosure:** this removes a **10-seed** paper, so it
+pushes the headline single-or-not-stated share **up**, i.e. in the direction
+that favours this project's hypothesis. SCAN.md therefore reports the primary
+outcome both with and without this exclusion, and the pair is named so anyone
+can recompute.
+
+**Effect on the rules:** adds one exclusion code. No inclusion criterion and no
+pre-committed threshold changes.
