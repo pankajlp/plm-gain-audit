@@ -126,3 +126,65 @@ the record shows the mistake rather than hiding it.
 
 **Pool as built:** 373 unique papers, primary categories cs.LG 178,
 q-bio.BM 93, q-bio.QM 68, cs.AI 10, cs.CL 8, q-bio.GN 6, cs.CE 4, cs.IR 1.
+
+### Amendment 2 — 2026-11-23 — two additive extraction fields
+
+Screening the first papers surfaced a case the frozen table cannot express.
+**HyPLM** (2611.12000) fits its probes as closed-form ridge and L-BFGS logistic
+regressions. Those arms are **deterministic**: there is no training seed to
+vary, so `seeds_per_arm = not_stated` would be scored against a design that
+has no seed-variance problem at all. Recording it as a flaw would be wrong.
+
+Two fields are therefore added to the extraction table:
+
+- **`deterministic_probe`** — `yes` / `no`. `yes` means the paper's head is
+  fitted deterministically (closed-form or convex with a fixed solver), so a
+  single run *is* the whole distribution for that arm.
+- **`note`** — free text, for what the decision turned on.
+
+**Effect on the rules:** none. No inclusion or exclusion criterion changes, and
+no pre-committed threshold changes. `deterministic_probe = yes` papers are
+still counted in the `seeds_per_arm` denominator exactly as the frame specifies
+— the primary outcome is untouched. The field exists so the write-up can report
+the deterministic subset **separately alongside** the headline figure instead of
+quietly folding it in. That separate figure is secondary and is labelled as a
+post-hoc split, because this distinction was not anticipated when the frame was
+frozen.
+
+### Amendment 3 — 2026-11-23 — I1 covers trained comparisons scored by structural or generative accuracy
+
+**The gap.** I1 says "supervised protein downstream task", written with property
+prediction in mind. Two early papers do not fit that wording but do fit its
+purpose:
+
+- **Calpha** (2611.20986) swaps one-hot, untrained-LLM states, protein-trained
+  LLM states and ESM2-3B features into a trained structure head and reports mean
+  TM per configuration.
+- **Ablating Design Choices for Protein Ensemble Generators** (2611.05055)
+  replaces ESM2-650M with ESM2-8M in a trained flow-matching model and reports
+  seed-averaged log RMSE differences.
+
+In both, a model is **trained**, a **representation is swapped**, and a
+**numeric metric** is reported — so a training seed exists and could have been
+varied. That is exactly the situation the primary outcome is about. The metric
+being TM or RMSE rather than Spearman or F1 does not change whether a seed
+exists.
+
+**Decision.** I1 is read to cover any comparison where a model is trained from
+the representation and scored numerically, including structural and conditional-
+generative metrics. Zero-shot and likelihood-only comparisons remain **E3**,
+unchanged — the test is whether a training seed exists, not what the metric is.
+
+**Direction check** (the reason this is safe to decide mid-scan): the two papers
+cut **opposite ways**. Calpha reports **one** trained model per configuration;
+the ensemble-generator paper reports **five** seeds for the base and **three**
+per variant and is among the most careful multi-seed ablations in the pool.
+Reading I1 narrowly would have dropped both — removing one single-seed paper and
+one exemplary multi-seed paper. So this choice is not a thumb on the scale in
+either direction, and the alternative (keeping Calpha while excluding the
+ensemble paper, or vice versa) would have been plainly inconsistent.
+
+**Effect on the rules:** I1's scope is clarified; no exclusion code changes and
+no pre-committed threshold changes. The write-up reports how many included
+papers entered under this reading, so the headline figure can be recomputed
+without them.
