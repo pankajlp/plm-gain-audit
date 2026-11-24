@@ -83,12 +83,9 @@ cross-benchmark regularity, and a threshold cheap enough to adopt.
 ## 6. Comments
 
 ```
-15 pages, 4 tables. Pre-registration frozen before screening; screening log,
-seed grids and per-seed predictions released.
+15 pages, 4 tables. Pre-registration frozen before screening. Code, screening
+log, seed grids and per-seed predictions: https://github.com/pankajlp/plm-gain-audit
 ```
-
-Add the repository URL to this field once the repo is pushed somewhere public.
-Right now there is no remote, so do not promise a link that does not resolve.
 
 ## 7. ACM / MSC class (optional)
 
@@ -111,3 +108,5 @@ Leave blank. This is a preprint with no prior venue.
 - [ ] References render: 31 entries, no "[?]" placeholders.
 - [ ] Decide whether `bindformer` stays as "manuscript in preparation". If
       BindFormer is posted first, swap in its arXiv id.
+- [ ] The repository is public at https://github.com/pankajlp/plm-gain-audit and the link in the Reproducibility
+      section resolves.

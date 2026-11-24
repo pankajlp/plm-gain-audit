@@ -704,7 +704,7 @@ be the default rather than the exception.
 
 # Reproducibility
 
-All code, logs and per-seed outputs are in the project repository.
+All code, logs and per-seed outputs are at <https://github.com/pankajlp/plm-gain-audit>.
 
 Two things are deliberately absent. The full texts we fetched to confirm seed
 counts are other authors' papers and are not ours to redistribute; the fetcher
