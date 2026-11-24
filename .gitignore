@@ -4,3 +4,9 @@ features/
 .venv/
 __pycache__/
 paper/paper.pdf
+
+# Not published: full texts of other authors's papers (regenerate with
+# src/fetch_texts.py) and private correspondence drafts.
+scan/texts/
+outreach/
+src/__pycache__/

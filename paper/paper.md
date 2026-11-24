@@ -706,6 +706,13 @@ be the default rather than the exception.
 
 All code, logs and per-seed outputs are in the project repository.
 
+Two things are deliberately absent. The full texts we fetched to confirm seed
+counts are other authors' papers and are not ours to redistribute; the fetcher
+regenerates them from the pool, and `scan/decisions.jsonl` records the passage
+each decision turned on, with its arXiv id, so the screening is auditable
+without them. Benchmark downloads and extracted embeddings are a few gigabytes
+and rebuild from public sources with `src/features.py`.
+
 | what | where |
 |---|---|
 | Part A frame, frozen before the pool | `FRAME.md` |
