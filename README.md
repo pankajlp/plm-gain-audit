@@ -89,3 +89,8 @@ Manuscript, write-ups and derived results (`paper/`, `*.md`, `evidence/`,
 
 arXiv metadata in `scan/pool.json` and `scan/refs.json` comes from the arXiv
 API and is CC0, per arXiv's terms.
+
+One author put a contact address in their abstract. It is redacted in
+`scan/pool.json` rather than republished here, since a scraped copy in a second
+repository only feeds address harvesters. Nothing in the screening used it, and
+a refetch of the pool restores it.
